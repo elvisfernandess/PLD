@@ -1,0 +1,115 @@
+%!PS-Adobe-3.0
+%%Creator: Model Technology ModelSim - INTEL FPGA STARTER EDITION vsim 2020.1 Simulator 2020.02 Feb 28 2020
+
+%%Title: wave.ps
+%%CreationDate: 2022-09-08 07:12:07 pm
+%%DocumentData: Clean8Bit
+%%DocumentNeededResources: font Helvetica
+%%Orientation: Landscape
+%%PageOrder: ascend
+%%Pages: 1
+%%EndComments
+%%BeginSetup
+%%BeginFeature: *PageSize 3.3464566929133857x4.3307086614173231
+<< /PageSize [240.94488188976376 311.81102362204729]
+/ImagingBBox null
+>> setpagedevice
+%%EndFeature
+%%EndSetup
+%%Page: 1 1
+gsave
+90 rotate 0.12 dup neg scale
+% dump string table
+/NP {newpath} def/SD {setdash} def/CL {setrgbcolor} def/GR {setgray} def
+/SX {exch LEdge sub XScale mul MaxLabelWidth add LMargin add LEdge LabelWidth sub add exch} def/CSX {exch dup LabelWidth gt {exch SX} {exch} ifelse} def
+/MT {SX moveto} def/LS {SX lineto stroke} def/LT {SX lineto} def/LFS {SX lineto fill stroke} def/RSS {rmoveto show stroke} def/ST {stroke} def/WT {CSX moveto dup stringwidth pop} def/TSW {pop 0 originOffset} def
+/TSE {MaxLabelWidth LabelWidth sub LMargin add 0 rmoveto neg originOffset} def/TS {-2 div originOffset CSX} def
+/MLW {stringwidth pop dup MaxLabelWidth gt {/MaxLabelWidth exch def}{pop} ifelse XS} def
+/XS {/XScale LabelWidth LMargin sub MaxLabelWidth LEdge LabelWidth sub add sub REdge LEdge sub div 1 add def} def
+/ARC {5 -2 roll SX 5 2 roll arc} def/LC {1 index stringwidth pop lt {pop ()} if} def
+/SW {stringwidth pop} def
+/ESTR {   dup 3 add string   /CurrentStr exch def   exch 0 2 index getinterval   0 1 3 index 1 sub {     dup     2 index exch get exch     CurrentStr exch 3 -1 roll put   } for   pop   dup 1 2 2 index add {     CurrentStr exch 46 put   } for   pop} def
+/LC {   exch  dup dup /CurrentStr exch def   SW 2 index gt {     CurrentStr length     dup     {       2 div cvi       3 index       CurrentStr SW       sub       dup 0 lt {         1 index         4 -1 roll         exch sub         3 1 roll       }       {         dup 5 index gt {           1 index 4 -1 roll add 3 1 roll         }         {           exit         } ifelse       } ifelse       3 index 2 index ESTR       1 index 0 eq {         exit       } if       pop     } loop     pop pop pop pop pop     CurrentStr   }   {     CurrentStr   } ifelse} def
+/XScale 1 def/MaxLabelWidth 0 def/LMargin 118 def/LEdge 663 def/REdge 2243 def/LabelWidth 626 def
+/Helvetica findfont [133 0 0 -133 0 0] makefont setfont
+/originOffset   currentfont   /FontBBox get 1 get   currentfont  /FontMatrix get 3 get   mul   currentfont   /FontType get   42 eq {     1000000 div   } {     neg   } ifelse def
+(invec) MLW
+(outvec) MLW
+% draw waveform shading
+0 0 0 CL
+(00000000111111110000000000000010) 272 LC 698 243 WT pop 0 originOffset 66 add RSS
+[] 0 SD
+3 setlinewidth
+0 setlinejoin
+1 setlinecap
+663 243 MT 663 243 LT 670 170 LT 998 170 LT 1005 243 LT ST
+663 243 MT 663 243 LT 670 316 LT 998 316 LT 1005 243 LT ST
+(00000000111111110000000011111111) 1300 LC 1040 243 WT pop 0 originOffset 66 add RSS
+1005 243 MT 1005 243 LT 1012 170 LT 2375 170 LT ST
+1005 243 MT 1005 243 LT 1012 316 LT 2375 316 LT ST
+(9) 272 LC 698 504 WT pop 0 originOffset 66 add RSS
+663 504 MT 663 504 LT 670 431 LT 998 431 LT 1005 504 LT ST
+663 504 MT 663 504 LT 670 577 LT 998 577 LT 1005 504 LT ST
+(16) 1300 LC 1040 504 WT pop 0 originOffset 66 add RSS
+1005 504 MT 1005 504 LT 1012 431 LT 2375 431 LT ST
+1005 504 MT 1005 504 LT 1012 577 LT 2375 577 LT ST
+% draw timeline
+(0 ns) 9999 LC 663 1620 WT TS RSS
+2 setlinecap
+685 1445 MT 685 1482 LS
+684 1464 MT 686 1464 LS
+(+5 ) 9999 LC 685 1620 WT TS RSS
+800 1445 MT 800 1482 LS
+937 1445 MT 937 1482 LS
+1074 1445 MT 1074 1482 LS
+1211 1445 MT 1211 1482 LS
+1347 1418 MT 1347 1482 LS
+1484 1445 MT 1484 1482 LS
+1621 1445 MT 1621 1482 LS
+1758 1445 MT 1758 1482 LS
+1895 1445 MT 1895 1482 LS
+2032 1418 MT 2032 1482 LS
+(40 ns) 9999 LC 2032 1620 WT TS RSS
+2169 1445 MT 2169 1482 LS
+2306 1445 MT 2306 1482 LS
+2443 1445 MT 2443 1482 LS
+2580 1445 MT 2580 1482 LS
+% draw grid
+1005 118 MT 1005 1418 LS
+1347 118 MT 1347 1418 LS
+1690 118 MT 1690 1418 LS
+2032 118 MT 2032 1418 LS
+2375 118 MT 2375 1418 LS
+% draw waveforms
+(invec) 9999 LC 626 315 WT TSE RSS
+998 118 MT 1012 118 LS
+1340 118 MT 1354 118 LS
+1683 118 MT 1697 118 LS
+2025 118 MT 2039 118 LS
+2368 118 MT 2382 118 LS
+(00000000111111110000000000000010) 272 LC 698 243 WT pop 0 originOffset 66 add RSS
+1 setlinecap
+663 243 MT 663 243 LT 670 170 LT 998 170 LT 1005 243 LT ST
+663 243 MT 663 243 LT 670 316 LT 998 316 LT 1005 243 LT ST
+(00000000111111110000000011111111) 1300 LC 1040 243 WT pop 0 originOffset 66 add RSS
+1005 243 MT 1005 243 LT 1012 170 LT 2375 170 LT ST
+1005 243 MT 1005 243 LT 1012 316 LT 2375 316 LT ST
+(outvec) 9999 LC 626 576 WT TSE RSS
+2 setlinecap
+998 379 MT 1012 379 LS
+1340 379 MT 1354 379 LS
+1683 379 MT 1697 379 LS
+2025 379 MT 2039 379 LS
+2368 379 MT 2382 379 LS
+(9) 272 LC 698 504 WT pop 0 originOffset 66 add RSS
+1 setlinecap
+663 504 MT 663 504 LT 670 431 LT 998 431 LT 1005 504 LT ST
+663 504 MT 663 504 LT 670 577 LT 998 577 LT 1005 504 LT ST
+(16) 1300 LC 1040 504 WT pop 0 originOffset 66 add RSS
+1005 504 MT 1005 504 LT 1012 431 LT 2375 431 LT ST
+1005 504 MT 1005 504 LT 1012 577 LT 2375 577 LT ST
+% draw footer
+(Entity:testbench  Architecture:stimulos  Date: Thu Sep 08 19:12:07 ART 2022   Row: 1 Page: 1) 9999 LC 118 1888 WT TSW RSS
+grestore
+showpage
+%%EOF

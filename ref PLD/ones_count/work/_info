@@ -1,0 +1,100 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/PLD/ones_count
+Eones_count
+Z1 w1662674669
+Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z4 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 1
+R0
+Z7 8ones_count.vhd
+Z8 Fones_count.vhd
+l0
+L7 1
+Vj`:APXAKV>:egNOUB8<cf2
+!s100 <0cQ?S:27mDfEI;XhG[@P1
+Z9 OV;C;2020.1;71
+32
+Z10 !s110 1662675123
+!i10b 1
+Z11 !s108 1662675122.000000
+Z12 !s90 -reportprogress|300|ones_count.vhd|testbench.vhd|
+Z13 !s107 testbench.vhd|ones_count.vhd|
+!i113 1
+Z14 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+R5
+R6
+Z15 DEx4 work 10 ones_count 0 22 j`:APXAKV>:egNOUB8<cf2
+!i122 1
+l17
+Z16 L15 18
+Z17 V^A6egmcJY[X>4S2ES0aem2
+Z18 !s100 `6RgLhMfR_:DTM<A:]d_G0
+R9
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 1
+R14
+Etestbench
+Z19 w1662675001
+R6
+R5
+R4
+!i122 1
+R0
+Z20 8testbench.vhd
+Z21 Ftestbench.vhd
+l0
+L5 1
+VZ]b3VO0U<5dOLl^NzL<L[0
+!s100 2FeZQkzF_ZG8>VelNKk4n1
+R9
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 1
+R14
+Astimulos
+R2
+R3
+R15
+R6
+R5
+R4
+Z22 DEx4 work 9 testbench 0 22 Z]b3VO0U<5dOLl^NzL<L[0
+!i122 1
+l13
+Z23 L8 25
+Z24 Vg3@k>O8BjL87j:Pi3H6:M1
+Z25 !s100 cP`R_RjM8nY]KhC:0ohII0
+R9
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 1
+R14

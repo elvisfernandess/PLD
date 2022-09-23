@@ -1,0 +1,114 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/PLD/alu
+Ealu
+Z1 w1662734773
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 18
+R0
+Z5 8alu.vhd
+Z6 Falu.vhd
+l0
+L13 1
+V^bnLkmECTH9M=Ng3F6^N[1
+!s100 `d>3?VQ>53K?@HHc87Wi52
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1662734788
+!i10b 1
+Z9 !s108 1662734787.000000
+Z10 !s90 -reportprogress|300|alu.vhd|testbench.vhd|
+Z11 !s107 testbench.vhd|alu.vhd|
+!i113 1
+Z12 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+Z13 DEx4 work 3 alu 0 22 ^bnLkmECTH9M=Ng3F6^N[1
+!i122 18
+l26
+Z14 L24 16
+V^CMD^U9282JPX<Q1I?U3<1
+!s100 =35O?bd^4LJPfg0UGhooZ0
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Abehave
+R2
+R3
+R4
+R13
+!i122 14
+l26
+L24 14
+VXN@BDf>;:OS<L9fHBi2T32
+!s100 RS6U0z@Ba^HEK_i]J4HLl2
+R7
+32
+!s110 1662733545
+!i10b 1
+!s108 1662733545.000000
+R10
+R11
+!i113 1
+R12
+w1662731180
+Etestbench
+Z15 w1662734369
+R4
+R3
+R2
+!i122 18
+R0
+Z16 8testbench.vhd
+Z17 Ftestbench.vhd
+l0
+L5 1
+VZ]b3VO0U<5dOLl^NzL<L[0
+!s100 2FeZQkzF_ZG8>VelNKk4n1
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Asimul
+R13
+R4
+R3
+R2
+Z18 DEx4 work 9 testbench 0 22 Z]b3VO0U<5dOLl^NzL<L[0
+!i122 18
+l16
+Z19 L8 46
+Z20 V<[PPdbgfWe^Rb9TNPW@PY3
+Z21 !s100 3LGKUe:b4=kEd42?9PoCX1
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
