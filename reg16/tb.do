@@ -1,33 +1,32 @@
 -------------------------------------------------------
---! Tarefa 03: Contador de Programa
+--! Tarefa 02: Registrador de 16 bits
 --! Aluno: Elvis Fernandes
---! Data: 29/09/2022
+--! Data: 23/09/2022
 --! Arquivo: tb.do
 -------------------------------------------------------
 
 #Cria biblioteca do projeto
 vlib work
 
-#compila projeto: todos os aquivo. Ordem Ã© importante
-vcom pc.vhd testbench.vhd
+#compila projeto: todos os aquivo. Ordem é importante
+vcom reg16.vhd testbench.vhd
 
-#Simula (work Ã© o diretorio, testbench Ã© o nome da entity)
+#Simula (work é o diretorio, testbench é o nome da entity)
 vsim -t ns work.testbench
 
 #Mosta forma de onda
 view wave
 
-#Adiciona ondas especÃ­ficas
+#Adiciona ondas específicas
 # -radix: binary, hex, dec
 # -label: nome da forma de onda
 add wave -radix binary  /clk
-add wave -radix binary  /load
-add wave -radix binary  /reset
-add wave -radix binary  /up
+add wave -radix binary  /rst_clear
+add wave -radix hex  /w_flag
 add wave -radix hex /datain
-add wave -radix hex /data
+add wave -radix hex /reg_out
 
-#Simula atÃ© um 500ns
+#Simula até um 500ns
 run 500ns
 
 wave zoomfull
