@@ -21,22 +21,20 @@ entity reg16 is
 end entity reg16;
 
 architecture rtl of reg16 is
- 	
+
 begin
-	process(clk)
-	begin
-		if (clk'event and clk = '1') then
-			if rst_clear = '1' then
-					reg_out <= (others => '0');
-				else
-					reg_out <= datain;
-			end if;
-					if w_flag = '1' then
-						reg_out <= datain;
-					else	
-						reg_out <= (others => '0');
-					end if;
-		end if;
-	end process;
+    process(rst_clear, clk)
+    begin
+        if rst_clear = '1' then
+            reg_out <= (others => '0');
+
+        elsif rising_edge(clk) then
+            if w_flag = '1' then
+                reg_out <= datain;
+
+            end if;
+        end if;
+
+    end process;
 
 end architecture rtl;
