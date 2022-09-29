@@ -25,7 +25,7 @@ signal data   	 : std_logic_vector(15 downto 0);
 
 begin                                   -- inicio do corpo da arquitetura
 
-dut : entity work.reg16
+dut : entity work.pc
 port map(
 clk       => clk,
 load      => load,
