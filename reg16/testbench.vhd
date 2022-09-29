@@ -1,7 +1,7 @@
 -------------------------------------------------------
---! Tarefa 2 - ULA - Registradorde 16 bits
+--! Tarefa 3 - Contador de Programa
 --! Aluno: Elvis Fernandes
---! Data: 28/09/2022
+--! Data: 29/09/2022
 --! Arquivo: testbench.vhd
 -------------------------------------------------------
 
@@ -15,45 +15,56 @@ end entity testbench;
 ------------------------------
 architecture stimulus of testbench is
 
-    -- declaração de sinais
-    signal clk       : std_logic                     := '0';
-    signal rst_clear : std_logic                     := '1';
-    signal w_flag    : std_logic                     := '1';
-    signal datain    : std_logic_vector(15 downto 0) := x"045a";
-    signal reg_out   : std_logic_vector(15 downto 0);
+-- declaração de sinais
+signal clk       : std_logic                     := '0';
+signal load 	 : std_logic                     := '1';
+signal reset 	 : std_logic                     := '1';
+signal up    	 : std_logic                     := '1';
+signal datain    : std_logic_vector(15 downto 0) := x"045a";
+signal data   	 : std_logic_vector(15 downto 0);
 
 begin                                   -- inicio do corpo da arquitetura
 
-    dut : entity work.reg16
-        port map(
-            clk       => clk,
-            rst_clear => rst_clear,
-            w_flag    => w_flag,
-            datain    => datain,
-            reg_out   => reg_out);
+dut : entity work.reg16
+port map(
+clk       => clk,
+load      => load,
+reset     => reset,
+up        => up,
+datain    => datain,
+data      => data);
 
-    -- gera um clock
-    process
-    begin
-        wait for 10 ns;
-        clk <= '0';
-        wait for 10 ns;
-        clk <= '1';
-    end process;
+- gera um clock
+process
+begin
+wait for 10 ns;
+clk <= '0';
+wait for 10 ns;
+clk <= '1';
+end process;
 
-    --gera enable w_flag
-    process
-    begin
-        wait for 60 ns;
-        w_flag <= '1';
-        wait;
-    end process;
+--gera um load
+process
+begin
+wait for 80 ns;
+load <= '1';
+wait;
+end process;
 
-    --gera enable rst_clear
-    process
-    begin
-        wait for 60 ns;
-        rst_clear <= '0';
-        wait;
-    end process;
+--gera um reset
+process
+begin
+wait for 100 ns;
+reset <= '1';
+wait;
+end process;
+
+--gera um up
+process
+begin
+wait for 120 ns;
+reset <= '1';
+wait;
+end process;
+
 end architecture stimulus;
