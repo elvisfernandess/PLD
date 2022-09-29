@@ -1,11 +1,11 @@
 -------------------------------------------------------
---! Tarefa 02: R    egistrador de 16 bits
+--! Tarefa 02: Registrador de 16 bits
 --! Aluno: Elvis Fernandes
---! Data: 23/09/2022
+--! Data: 28/09/2022
 --! Arquivo: reg16.vhd
 -------------------------------------------------------
 
--- bibliotecas e cl·sulas
+-- bibliotecas e cl√°sulas
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -13,9 +13,30 @@ use ieee.numeric_std.all;
 entity reg16 is
     port(
         clk       : in  std_logic;      --! clock
-        rst_clear : in  std_logic;      --! reset assÌncrono (clear)
-        w_flag    : out std_logic;      --! bit de controle de escrita
+        rst_clear : in  std_logic;      --! reset ass√≠ncrono (clear)
+        w_flag    : in  std_logic;      --! bit de controle de escrita
         datain    : in  std_logic_vector(15 downto 0); --! entrada de dados
         reg_out   : out std_logic_vector(15 downto 0)
     );
 end entity reg16;
+
+architecture rtl of reg16 is
+ 	
+begin
+	process(clk)
+	begin
+		if (clk'event and clk = '1') then
+			if rst_clear = '1' then
+					reg_out <= (others => '0');
+				else
+					reg_out <= datain;
+			end if;
+					if w_flag = '1' then
+						reg_out <= datain;
+					else	
+						reg_out <= (others => '0');
+					end if;
+		end if;
+	end process;
+
+end architecture rtl;
