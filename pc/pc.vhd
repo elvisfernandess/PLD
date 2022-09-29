@@ -11,6 +11,7 @@ entity pc is
         clk    : in  std_logic;
         load   : in  std_logic;
         reset  : in  std_logic;
+        up     : in  std_logic;
         datain : in  unsigned(BITS downto 0);
         value  : out unsigned(BITS downto 0)
     );
@@ -25,10 +26,14 @@ begin
         if reset = '1' then
             data <= (others => '0');
         elsif rising_edge(clk) then
+
             if load = '1' then
                 data <= datain;
             end if;
-            data <= data + 1;
+
+            if up = '1' then
+                data <= data + 1;
+            end if;
         end if;
     end process;
 
