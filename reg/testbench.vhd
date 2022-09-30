@@ -24,7 +24,10 @@ signal w_data    : std_logic_vector(15 downto 0) := x"045a";
 signal ra_data   : std_logic_vector(15 downto 0);
 signal rb_data   : std_logic_vector(15 downto 0);
 
-dut : entity work.pc
+begin                                   -- inicio do corpo da arquitetura
+
+dut : entity work.reg
+
 port map(
 clk       => clk,
 reset     => reset,
@@ -57,3 +60,5 @@ wait for 80 ns;
 w_wr <= '1';
 wait;
 end process;
+
+end architecture stimulus;
