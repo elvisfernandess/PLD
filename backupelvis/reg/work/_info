@@ -1,0 +1,89 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Aluno/Documents/backupelvis/reg
+Ereg
+Z1 w1664539954
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8reg.vhd
+Z6 Freg.vhd
+l0
+L13
+V21dQN:b^A8DDF7mfNKP9a1
+!s100 ?joCB4fCR_L_:oYJ9VAUP0
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1664539989
+!i10b 1
+Z9 !s108 1664539989.000000
+Z10 !s90 -reportprogress|300|reg.vhd|testbench.vhd|
+Z11 !s107 testbench.vhd|reg.vhd|
+!i113 1
+Z12 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+Z13 DEx4 work 3 reg 0 22 21dQN:b^A8DDF7mfNKP9a1
+l32
+L28
+VF[jHPFoSHHl`5ARLE;j`^3
+!s100 e_jYV2B<HPPNdnk30aIaZ1
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Etestbench
+Z14 w1664539984
+R2
+R3
+R4
+R0
+Z15 8testbench.vhd
+Z16 Ftestbench.vhd
+l0
+L14
+VI=]Jzi=<CCXf8DUHR`<5A3
+!s100 JXW]HIHfeEC7IhRK?^1f[1
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Astimulus
+R13
+R2
+R3
+R4
+Z17 DEx4 work 9 testbench 0 22 I=]Jzi=<CCXf8DUHR`<5A3
+l27
+L17
+Vj74C2MalA@D1d9lAm`:IQ0
+!s100 Ik?d61Tz7W3]f_F`4ja_<3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
