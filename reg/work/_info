@@ -1,0 +1,73 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/elvis/OneDrive/Documentos/Engenharia Eletronica/projetosfpga/reg/reg
+Ereg
+Z1 w1664508839
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R0
+Z5 8reg.vhd
+Z6 Freg.vhd
+l0
+L13 1
+VoF^>6b=[Xl>I]Fk]J;WGB0
+!s100 1nWoMlSd3hzR`HVBZn=oh1
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1664509265
+!i10b 1
+Z9 !s108 1664509265.000000
+Z10 !s90 -reportprogress|300|reg.vhd|testbench.vhd|
+!s107 testbench.vhd|reg.vhd|
+!i113 1
+Z11 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+DEx4 work 3 reg 0 22 oF^>6b=[Xl>I]Fk]J;WGB0
+!i122 0
+l32
+L28 25
+V6G0=K[mM>FOOo6S_RXe4C1
+!s100 n^g8cIlLnJ5Z82;Sm]J5z3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+Z12 !s107 testbench.vhd|reg.vhd|
+!i113 1
+R11
+Etestbench
+w1664508167
+R2
+R3
+R4
+!i122 0
+R0
+8testbench.vhd
+Ftestbench.vhd
+l0
+L14 1
+VI=]Jzi=<CCXf8DUHR`<5A3
+!s100 JXW]HIHfeEC7IhRK?^1f[1
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R12
+!i113 1
+R11
