@@ -23,7 +23,10 @@ view wave
 add wave -radix binary  /clk
 add wave -radix binary  /reset
 add wave -radix binary  /w_wr
+add wave -radix hex  /w_addr
 add wave -radix hex /w_data
+add wave -radix hex /ra_addr
+add wave -radix hex /rb_addr
 add wave -radix hex /ra_data
 add wave -radix hex /rb_data
 

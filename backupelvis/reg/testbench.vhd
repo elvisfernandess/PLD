@@ -20,7 +20,10 @@ architecture stimulus of testbench is
 signal clk       : std_logic                     := '0';
 signal reset 	 : std_logic                     := '1';
 signal w_wr      : std_logic                     := '1';
+signal w_addr    : unsigned(3 downto 0) := "0101";
 signal w_data    : unsigned(15 downto 0) := x"045a";
+signal ra_addr   : unsigned(3 downto 0) := "1010";
+signal rb_addr   : unsigned(3 downto 0) := "0110";
 signal ra_data   : unsigned(15 downto 0);
 signal rb_data   : unsigned(15 downto 0);
 
@@ -32,9 +35,12 @@ port map(
 clk       => clk,
 reset     => reset,
 w_wr      => w_wr,
+w_addr    => w_addr,
 w_data    => w_data,
+ra_addr   => ra_addr,
+rb_addr   => rb_addr,
 ra_data   => ra_data,
-rb_data   => rb_data);
+rb_data   => rb_data); 
 
 --gera um clock
 process
@@ -58,6 +64,7 @@ process
 begin
 wait for 80 ns;
 w_wr <= '1';
+w_addr <= ra_addr;
 wait;
 end process;
 
