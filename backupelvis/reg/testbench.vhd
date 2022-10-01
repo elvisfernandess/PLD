@@ -65,6 +65,11 @@ begin
 wait for 80 ns;
 w_wr <= '1';
 w_addr <= ra_addr;
+wait for 10 ns;
+w_wr <= '0';
+wait for 10 ns;
+w_wr <= '1';
+w_addr <= rb_addr;
 wait;
 end process;
 
