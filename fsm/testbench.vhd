@@ -1,4 +1,3 @@
-
 -- bibliotecas e clásulas
 library ieee;
 use ieee.std_logic_1164.all;
@@ -68,9 +67,9 @@ begin
     --gera uma forma de onda de um só pulso
     process
     begin
-        set_point   <= x"000D";
-        temperature <= x"000E";
-        wait for 30 ns;
+        set_point   <= x"000E";
+        temperature <= x"000F";
+        wait for 300 ns;
         set_point   <= x"000F";
         temperature <= x"000B";
         wait for 30 ns;
