@@ -1,0 +1,89 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Aluno/Documents/PLD-main/fsm/controlador_semaforos
+Econtrolador_semaforos
+Z1 w1666273380
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8controlador_semaforos.vhd
+Z6 Fcontrolador_semaforos.vhd
+l0
+L12
+V9YNH4iLXA1CcAZD7_i^9h1
+!s100 JTm?fzkRP5B=7?Y2Gh__i3
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1666275295
+!i10b 1
+Z9 !s108 1666275295.000000
+Z10 !s90 -reportprogress|300|controlador_semaforos.vhd|testbench.vhd|
+Z11 !s107 testbench.vhd|controlador_semaforos.vhd|
+!i113 1
+Z12 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+Z13 DEx4 work 21 controlador_semaforos 0 22 9YNH4iLXA1CcAZD7_i^9h1
+l47
+L37
+Z14 V=>j>oR7BX]56U=Bh3:EYb3
+Z15 !s100 P1Fz1V65@ofhI]7<Q_JYM1
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Etestbench
+Z16 w1666275291
+R2
+R3
+R4
+R0
+Z17 8testbench.vhd
+Z18 Ftestbench.vhd
+l0
+L6
+VW0zEUk5JmPN>XC<:g5SEb1
+!s100 5XZRBke3il_U5BAh4FK]h1
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Astimulus
+R13
+R2
+R3
+R4
+Z19 DEx4 work 9 testbench 0 22 W0zEUk5JmPN>XC<:g5SEb1
+l24
+L10
+V=YPe;Tgm]0^K=m6Nj^1eh0
+!s100 LD_MQI4NT:oWIaf@Xn_f30
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
