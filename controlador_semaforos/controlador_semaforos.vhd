@@ -11,10 +11,11 @@ use ieee.numeric_std.all;
 
 entity controlador_semaforos is
     generic(
+        constant MAX: natural := 80;
         TEMPO_TESTE_1 : integer := 5;
         TEMPO_TESTE_2 : integer := 45;
         TEMPO_TESTE_3 : integer := 50;
-        TEMPO_TESTE_4 : integer := 80
+        TEMPO_TESTE_4 : integer := 30
     );
 
     port(
@@ -35,14 +36,14 @@ entity controlador_semaforos is
 end entity controlador_semaforos;
 
 architecture RTL of controlador_semaforos is
-    type state_type is (REGULAR,STANDBY);
+    type state_type is (AmAm,VmAm,VdVm,AmVm,VmVd);
 
     signal state : state_type;
-    signal AmAm  : state_type;
-    signal VmAm  : state_type;
-    signal VdVm  : state_type;
-    signal AmVm  : state_type;
-    signal VmVd  : state_type;
+    --signal AmAm  : state_type;
+    --signal VmAm  : state_type;
+    --signal VdVm  : state_type;
+    --signal AmVm  : state_type;
+    --signal VmVd  : state_type;
 
 begin
 
@@ -50,37 +51,38 @@ begin
     -- transição de estados
     state_transation : process(clk, reset) is
         variable cont : integer;
+	variable count: natural range 0 to MAX := 0;
     begin
         if reset = '1' then
-            state <= STANDBY;
-        elsif rising_edge(clk) then
-            case state is
-                when STANDBY =>
-                    if stby = '1' then
-                        state <= AmAm;
-                    end if;
-                    state <= VmAm;
-                    cont  := cont + 1;
-                when REGULAR =>
-                    if cont = TEMPO_TESTE_1 then
-                        state <= VdVm;
-                        cont  := cont + 1;
-                    end if;
-                    if cont = TEMPO_TESTE_2 then
-                        state <= AmVm;
-                        cont  := cont + 1;
-                    end if;
-                    if cont = TEMPO_TESTE_3 then
-                        state <= VmVd;
-                        cont  := cont + 1;
-                    end if;
-                    if cont = TEMPO_TESTE_4 then
-                        state <= VmAm;
-                        cont  := 0;
-                    end if;
-            
-                  
-            end case;
-        end if;
+		if stby = '1' then
+		state <= AmAm;
+		end if;
+		count := count + 1;
+
+        elsif falling_edge(clk) then
+
+	if stby = '0' then
+            state <= VmAm;
+	end if;
+
+		count := count + 1;
+
+	if count >= TEMPO_TESTE_1 then
+            state <= VdVm;
+	end if;
+
+		count := count +15;	
+        
+	if count >= (TEMPO_TESTE_2) then
+		state <= AmVm;
+	end if;
+	
+		count := count + 1;
+
+	if count >= (TEMPO_TESTE_3) then
+		state <= VmVd;
+	end if;
+
+  	end if;
     end process;
 end architecture RTL;

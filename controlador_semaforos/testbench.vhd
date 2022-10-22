@@ -51,7 +51,7 @@ begin
     process
     begin
         reset <= '1';
-        wait for 20 ns;
+        wait for 60 ns;
         reset <= '0';
         wait;
     end process;
@@ -63,10 +63,6 @@ begin
         wait for 100 ns;
         stby <= '0';
         wait for 100 ns;
-        stby <= '1';
-        wait for 120 ns;
-        stby <= '0';
-        wait for 40 ns;
         --wait;
     end process;
 end architecture stimulus;
