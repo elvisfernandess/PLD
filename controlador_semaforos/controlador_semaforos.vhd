@@ -11,7 +11,7 @@ use ieee.numeric_std.all;
 
 entity controlador_semaforos is
     generic(
-        constant MAX: natural := 80;
+        constant MAX: natural := 60;
         TEMPO_TESTE_1 : integer := 5;
         TEMPO_TESTE_2 : integer := 45;
         TEMPO_TESTE_3 : integer := 5;
@@ -60,40 +60,46 @@ begin
 		count := count + 1;
 
         elsif rising_edge(clk) then
-
-	if stby = '0' then
+ 	if stby = '0' then
             state <= VmAm;
+	    count := count + 1;
 	
-	elsif rising_edge(clk) then
-		count := count + 1;
-
 	if count >= TEMPO_TESTE_1 then
             	state <= VdVm;
-	
-	elsif rising_edge(clk) then
 		count := count +1;	
         
-	if count >= (TEMPO_TESTE_2) then
-		state <= AmVm;
-		
-	elsif rising_edge(clk) then
-		count := count + 1;
+case state is
+                when AmAm =>
+                    state <= VmAm;
+	               when VmAm =>
+			count := count +1;
+if count >= TEMPO_TESTE_1 then	
+                    state <= VdVm;
+end if;
+		 when VdVm =>
+count := count +1;
 
-	if count >= (TEMPO_TESTE_3) then
-		state <= VmVd;
+if count >= TEMPO_TESTE_2 then
+                    state <= AmVm;
+count := count +1;
+end if;
+			when AmVm =>
+
+--if count >= TEMPO_TESTE_3 then
+                    state <= VmVd;
+count := count +1;
+--end if;
+			when VmVd =>
+count := count +1;
+if count >= TEMPO_TESTE_4 then
+                    state <= VmAm;
+count := count +1;
+end if;
+
+
+            end case;
 	
-	elsif rising_edge(clk) then
-		count := count + 1;
-
-	if count >= (TEMPO_TESTE_4) then
-		state <= VmAm;
-
-	--elsif rising_edge(clk) then
-		count := count + 1;
-
-					end if;
-				end if;
-			end if;
+	
 		end if;	
 	end if;
 end if;
