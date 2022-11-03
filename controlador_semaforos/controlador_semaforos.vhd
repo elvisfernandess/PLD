@@ -11,7 +11,7 @@ use ieee.numeric_std.all;
 
 entity controlador_semaforos is
     generic(
-        constant MAX: natural := 60;
+        constant MAX  : natural := 80;
         TEMPO_TESTE_1 : integer := 5;
         TEMPO_TESTE_2 : integer := 45;
         TEMPO_TESTE_3 : integer := 5;
@@ -36,7 +36,7 @@ entity controlador_semaforos is
 end entity controlador_semaforos;
 
 architecture RTL of controlador_semaforos is
-    type state_type is (AmAm,VmAm,VdVm,AmVm,VmVd);
+    type state_type is (AmAm, VmAm, VdVm, AmVm, VmVd);
 
     signal state : state_type;
     --signal AmAm  : state_type;
@@ -50,108 +50,106 @@ begin
     -- Processo repsonsável apenas pela
     -- transição de estados
     state_transation : process(clk, reset) is
-        variable cont : integer;
-	variable count: natural range 0 to MAX := 0;
+        variable cont  : integer;
+        variable count : natural range 0 to MAX := 0;
     begin
         if reset = '1' then
-		if stby = '1' then
-		state <= AmAm;
-		end if;
-		count := count + 1;
+            if stby = '1' then
+                state <= AmAm;
+            end if;
+            count := count + 1;
 
         elsif rising_edge(clk) then
- 	if stby = '0' then
-            state <= VmAm;
-	    count := count + 1;
-	
-	if count >= TEMPO_TESTE_1 then
-            	state <= VdVm;
-		count := count +1;	
-        
-case state is
-                when AmAm =>
-                    state <= VmAm;
-	               when VmAm =>
-			count := count +1;
-if count >= TEMPO_TESTE_1 then	
+            if stby = '0' then
+                state <= VmAm;
+                count := count + 1;
+
+                if count >= TEMPO_TESTE_1 then
                     state <= VdVm;
-end if;
-		 when VdVm =>
-count := count +1;
+                    count := count + 1;
 
-if count >= TEMPO_TESTE_2 then
-                    state <= AmVm;
-count := count +1;
-end if;
-			when AmVm =>
+                    case state is
+                        when AmAm =>
+                            state <= VmAm;
+                        when VmAm =>
+                            count := count + 1;
+                            if count >= TEMPO_TESTE_1 then
+                                state <= VdVm;
+                            end if;
+                        when VdVm =>
+                            count := count + 1;
 
---if count >= TEMPO_TESTE_3 then
-                    state <= VmVd;
-count := count +1;
---end if;
-			when VmVd =>
-count := count +1;
-if count >= TEMPO_TESTE_4 then
-                    state <= VmAm;
-count := count +1;
-end if;
+                            if count >= TEMPO_TESTE_2 then
+                                state <= AmVm;
+                                count := count + 1;
+                            end if;
+                        when AmVm =>
 
+                            if count >= TEMPO_TESTE_3 then
+                                state <= VmVd;
+                                count := count + 1;
+                            end if;
+                        when VmVd =>
+                            count := count + 1;
+                            if count >= TEMPO_TESTE_4 then
+                                state <= VmAm;
+                                count := count + 1;
+                            end if;
 
-            end case;
-	
-	
-		end if;	
-	end if;
-end if;
+                            count := 0;
+
+                    end case;
+                end if;
+            end if;
+        end if;
     end process;
 
-output : process(state)
+    output : process(state)
     begin
         vermelho_1 <= '0';
-        amarelo_1 <= '1';
-        verde_1 <= '0';
+        amarelo_1  <= '1';
+        verde_1    <= '0';
         vermelho_2 <= '0';
-        amarelo_2 <= '1';
-        verde_2 <= '0';
-        
-        case state is
-                when AmAm =>
-                    vermelho_1 <= '0';
-                    amarelo_1 <= '1';
-                    verde_1 <= '0';
-                    vermelho_2 <= '0';
-                    amarelo_2 <= '1';
-                    verde_2 <= '0';
-                when VmAm =>
-                    vermelho_1 <= '1';
-                    amarelo_1 <= '0';
-                    verde_1 <= '0';
-                    vermelho_2 <= '0';
-                    amarelo_2 <= '1';
-                    verde_2 <= '0';
-                when VdVm =>
-                    vermelho_1 <= '0';
-                    amarelo_1 <= '0';
-                    verde_1 <= '1';
-                    vermelho_2 <= '1';
-                    amarelo_2 <= '0';
-                    verde_2 <= '0';
-                when AmVm =>
-                    vermelho_1 <= '0';
-                    amarelo_1 <= '1';
-                    verde_1 <= '0';
-                    vermelho_2 <= '1';
-                    amarelo_2 <= '0';
-                    verde_2 <= '0';
-                when VmVd =>
-                    vermelho_1 <= '1';
-                    amarelo_1 <= '0';
-                    verde_1 <= '0';
-                    vermelho_2 <= '0';
-                    amarelo_2 <= '0';
-                    verde_2 <= '1';
-            end case;
-    end process;
+        amarelo_2  <= '1';
+        verde_2    <= '0';
 
+        case state is
+            when AmAm =>
+                vermelho_1 <= '0';
+                amarelo_1  <= '1';
+                verde_1    <= '0';
+                vermelho_2 <= '0';
+                amarelo_2  <= '1';
+                verde_2    <= '0';
+            when VmAm =>
+                vermelho_1 <= '1';
+                amarelo_1  <= '0';
+                verde_1    <= '0';
+                vermelho_2 <= '0';
+                amarelo_2  <= '1';
+                verde_2    <= '0';
+            when VdVm =>
+                vermelho_1 <= '0';
+                amarelo_1  <= '0';
+                verde_1    <= '1';
+                vermelho_2 <= '1';
+                amarelo_2  <= '0';
+                verde_2    <= '0';
+            when AmVm =>
+                vermelho_1 <= '0';
+                amarelo_1  <= '1';
+                verde_1    <= '0';
+                vermelho_2 <= '1';
+                amarelo_2  <= '0';
+                verde_2    <= '0';
+            when VmVd =>
+                vermelho_1 <= '1';
+                amarelo_1  <= '0';
+                verde_1    <= '0';
+                vermelho_2 <= '0';
+                amarelo_2  <= '0';
+                verde_2    <= '1';
+        end case;
+    end process;
 
 end architecture RTL;

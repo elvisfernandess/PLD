@@ -55,7 +55,7 @@ begin
         reset <= '0';
         wait;
     end process;
-    
+
     --gera uma forma de onda de um só pulso
     process
     begin
@@ -63,6 +63,6 @@ begin
         wait for 100 ns;
         stby <= '0';
         wait for 100 ns;
-        --wait;
+        wait;
     end process;
 end architecture stimulus;

@@ -27,7 +27,7 @@ add wave -radix binary  /verde_2
 
 
 #Simula até um 500ns
-run 500ns
+run 3000ns
 
 wave zoomfull
 write wave wave.ps
