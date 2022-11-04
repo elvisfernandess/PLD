@@ -20,11 +20,15 @@ architecture stimulus of testbench is
     signal vermelho_2 : std_logic;
     signal amarelo_2  : std_logic;
     signal verde_2    : std_logic;
+    
 
 begin
 
     dut : entity work.controlador_semaforos
 
+	generic map(
+            MAX => 60
+        )
         port map(
             clk        => clk,
             reset      => reset,
@@ -38,24 +42,27 @@ begin
             verde_2    => verde_2
         );
 
+
     -- gera uma forma de onda repetitiva e regular: clocks
     process
+constant period : time := 20 ns;
     begin
+
         clk <= '0';
-        wait for 50 ns;
+        wait for period / 2;
         clk <= '1';
-        wait for 50 ns;
+        wait for period / 2;
     end process;
 
     --gera uma forma de onda de um só pulso
     process
     begin
         reset <= '1';
-        wait for 60 ns;
+        wait for 100 ns;
         reset <= '0';
         wait;
     end process;
-
+    
     --gera uma forma de onda de um só pulso
     process
     begin

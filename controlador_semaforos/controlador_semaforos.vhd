@@ -11,7 +11,7 @@ use ieee.numeric_std.all;
 
 entity controlador_semaforos is
     generic(
-        constant MAX  : natural := 80;
+        constant MAX  : natural := 100;
         TEMPO_TESTE_1 : integer := 5;
         TEMPO_TESTE_2 : integer := 45;
         TEMPO_TESTE_3 : integer := 5;
@@ -67,17 +67,22 @@ begin
                 if count >= TEMPO_TESTE_1 then
                     state <= VdVm;
                     count := count + 1;
-
+		    --count := 0;
+ 
                     case state is
                         when AmAm =>
                             state <= VmAm;
                         when VmAm =>
                             count := count + 1;
+				--count := 0;
+ 
                             if count >= TEMPO_TESTE_1 then
                                 state <= VdVm;
                             end if;
                         when VdVm =>
                             count := count + 1;
+			--count := 0;
+ 
 
                             if count >= TEMPO_TESTE_2 then
                                 state <= AmVm;
