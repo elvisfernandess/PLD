@@ -1,0 +1,133 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Aluno/Downloads/PLD-main/memoria_ram
+Ememoria
+Z1 w1667563520
+Z2 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+Z3 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z6 8rom_ram.vhd
+Z7 From_ram.vhd
+l0
+L21
+V1mPGYEP?^[KlcDWfZ23Fz0
+!s100 ?PN`EiKT[>4[P79m1D3502
+Z8 OV;C;10.5b;63
+32
+Z9 !s110 1667563818
+!i10b 1
+Z10 !s108 1667563818.000000
+Z11 !s90 -reportprogress|300|rom_ram.vhd|testbench.vhd|
+Z12 !s107 testbench.vhd|rom_ram.vhd|
+!i113 1
+Z13 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+R5
+Z14 DEx4 work 7 memoria 0 22 1mPGYEP?^[KlcDWfZ23Fz0
+l99
+L32
+Z15 Vo^a_BDGCl0oO9EcE8eV;Y2
+Z16 !s100 6_fBS@JUbG;J7?fEYS<QD2
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Erom_ram
+Z17 w1667563402
+R2
+R3
+R4
+R5
+R0
+R6
+R7
+l0
+L21
+V2o>j0ZXXTMb2XFk7YB^NZ0
+!s100 zkTUl[]F8?e99K_zbTg]a0
+R8
+32
+Z18 !s110 1667563408
+!i10b 1
+Z19 !s108 1667563408.000000
+R11
+R12
+!i113 1
+R13
+Artl
+R2
+R3
+R4
+R5
+Z20 DEx4 work 7 rom_ram 0 22 2o>j0ZXXTMb2XFk7YB^NZ0
+l99
+L32
+VB0^ckgncM:YJlSec1JTXh1
+!s100 dfiM0b^`4>a;HlfYi0TRI3
+R8
+32
+R18
+!i10b 1
+R19
+R11
+R12
+!i113 1
+R13
+Etestbench
+Z21 w1667562898
+R3
+R4
+R5
+R0
+Z22 8testbench.vhd
+Z23 Ftestbench.vhd
+l0
+L15
+VZ6afYU@N]`JjkC7:zMgVG1
+!s100 bSe:l:15eGmIPVM6K4;3l3
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Astimulus
+R2
+R20
+R3
+R4
+R5
+Z24 DEx4 work 9 testbench 0 22 Z6afYU@N]`JjkC7:zMgVG1
+l25
+L19
+Z25 VUT`WD9aQje[<QRJIa8g`Q1
+Z26 !s100 Ng^neiR3W@XoLEoF_W>3m2
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
