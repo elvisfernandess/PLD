@@ -23,9 +23,9 @@ entity memoria is
         clk     : in  std_logic;
         addr    : in  unsigned(4 downto 0);
         -- Must exist to infer RAM.
-        we      : in  std_logic;
+        reset      : in  std_logic;
         data_in : in  std_logic_vector(15 downto 0);
-        q       : out std_logic_vector(15 downto 0)
+        data       : out std_logic_vector(15 downto 0)
     );
 end entity;
 
@@ -91,7 +91,7 @@ architecture rtl of memoria is
 
     -- Initialize memory with constant values
     -- Does work with Quartus
-    signal rom : memory_t := ("0101010101010101", "0101010101010101", "0101010101010101", "0101010101010101", -- 0, 1, 2, 3
+    signal rom : memory_t := ("0101010101010111", "0101010101010101", "0101010101010101", "0101010101010101", -- 0, 1, 2, 3
                               "0101010101010101", "0101010101010101", "0101010101010101", "0101010101010101", -- 4, 5, 6, 7 
                               "0101010101010101", "0101010101010101", "0101010101010101", "0101010101010101", -- 8, 9, A, B 
                               "0101010101010101", "0101010101010101", "0101010101010101", "0101010101010101", -- C, D, E, F
@@ -101,10 +101,10 @@ begin
     process(clk)
     begin
         if (rising_edge(clk)) then
-            if we = '1' then
+            if reset = '1' then
                 rom(to_integer(addr)) <= data_in;
             end if;
-            q <= rom(to_integer(addr));
+            data <= rom(to_integer(addr));
         end if;
     end process;
 end rtl;

@@ -26,7 +26,7 @@ begin                                   -- inicio do corpo da arquitetura
 
     -- instância de divisor_clock com nome dut, pode haver 
     -- quantas mais do que uma
-    dut : entity work.rom_ram
+    dut : entity work.memoria
         port map(
             clk     => clk,
             addr    => addr,
