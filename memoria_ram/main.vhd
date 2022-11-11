@@ -13,8 +13,15 @@ entity main is
 end entity main;
 
 architecture RTL of main is
-    signal data_in : unsigned(BITS downto 0);
-    signal data    : unsigned(BITS downto 0);
+    signal addr         : unsigned(4 downto 0);
+    signal data_in_rom  : std_logic_vector(BITS downto 0);
+    signal data_rom     : std_logic_vector(BITS downto 0);
+    signal load         : std_logic;
+    signal up           : std_logic;
+    signal data_in_pc   : unsigned(BITS downto 0);
+    signal data_pc      : unsigned(BITS downto 0);
+    signal data_rom_out : std_logic_vector(15 downto 0);
+    
 
 begin
 
@@ -23,19 +30,18 @@ begin
             clk     => clk,
             addr    => addr,
             reset   => reset,
-            data_in => data_in,
-            data    => data
+            data_in => data_rom,
+            data    => data_rom_out
         );
 
     pc : entity work.pc
-
         port map(
             clk     => clk,
             load    => load,
             reset   => reset,
             up      => up,
-            data_in => data_in,
-            data    => data
+            data_in => data_in_pc,
+            data    => data_rom
         );
 
 end architecture RTL;

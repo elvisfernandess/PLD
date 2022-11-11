@@ -15,12 +15,12 @@ entity pc is
     );
 
     port(
-        clk    : in  std_logic;
-        load   : in  std_logic;
-        reset  : in  std_logic;
-        up     : in  std_logic;
+        clk     : in  std_logic;
+        load    : in  std_logic;
+        reset   : in  std_logic;
+        up      : in  std_logic;
         data_in : in  unsigned(BITS downto 0);
-        data   : out unsigned(BITS downto 0)
+        data    : out unsigned(BITS downto 0)
     );
 end entity pc;
 

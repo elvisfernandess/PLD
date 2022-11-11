@@ -23,9 +23,9 @@ entity memoria is
         clk     : in  std_logic;
         addr    : in  unsigned(4 downto 0);
         -- Must exist to infer RAM.
-        reset      : in  std_logic;
+        reset   : in  std_logic;
         data_in : in  std_logic_vector(15 downto 0);
-        data       : out std_logic_vector(15 downto 0)
+        data    : out std_logic_vector(15 downto 0)
     );
 end entity;
 
