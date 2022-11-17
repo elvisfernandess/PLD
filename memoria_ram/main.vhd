@@ -56,4 +56,22 @@ begin
             data    => saida
         );
 
+    registrador_instrucao : entity work.registrador_instrucao
+        port map(
+            clk          => clk,
+            reset        => reset,
+            en           => en,
+            datain       => datain,
+            opcode       => opcode,
+            cond         => cond,
+            deslocamento => deslocamento,
+            mode         => mode,
+            reg          => reg,
+            reg2         => reg2,
+            src          => src,
+            dst          => dst
+        );
+
+    datain <= saida(15 downto 0);
+
 end architecture RTL;
