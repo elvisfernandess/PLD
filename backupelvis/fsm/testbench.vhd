@@ -54,6 +54,7 @@ begin
         wait for 40 ns;
 
         wait;
+
     end process;
 
 end architecture stimulus;
