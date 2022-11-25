@@ -19,10 +19,10 @@ end entity testbench;
 architecture stimulus of testbench is
     -- declaração de sinais
     signal clk   : std_logic := '0';
-    signal addr  : unsigned(4 downto 0);
-    signal data  : std_logic_vector(6 downto 0);
-    signal reset : std_logic;
-
+    signal addr  : unsigned(4 downto 0) := "10000";
+    signal data  : std_logic_vector(6 downto 0) :="1000000";
+    signal reset: std_logic := '0'; 
+ 
 begin                                   -- inicio do corpo da arquitetura
 
     -- instância de divisor_clock com nome dut, pode haver 
@@ -31,7 +31,7 @@ begin                                   -- inicio do corpo da arquitetura
 
         port map(
             clk   => clk,
-            reset => reset
+            reset => reset 		
         );
 
     --gera um clock
@@ -46,9 +46,12 @@ begin                                   -- inicio do corpo da arquitetura
     --gera um reset
     process
     begin
-        wait for 60 ns;
+	reset <= '1';
+        wait for 10 ns;
         reset <= '0';
+	wait for 10 ns;
         wait;
     end process;
+	
 
 end architecture stimulus;
