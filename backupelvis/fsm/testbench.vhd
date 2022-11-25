@@ -30,29 +30,23 @@ begin
     process
     begin
         clk <= '0';
-        wait for 50 ns;
+        wait for 10 ns;
         clk <= '1';
-        wait for 50 ns;
+        wait for 10 ns;
     end process;
 
-    --gera uma forma de onda de um só pulso
     process
     begin
         rst <= '1';
-        wait for 20 ns;
-        rst <= '0';
-        wait;
-    end process;
-
-    --gera uma forma de onda de um só pulso
-    process
-    begin
         d <= '0';
-        wait for 10 ns;
-
+        wait for 15 ns;
+        
+        rst <= '0';
         d <= '1';
-        wait for 40 ns;
-
+        wait for 80 ns;
+        
+        d <= '0';
+        wait for 20 ns;
         wait;
 
     end process;

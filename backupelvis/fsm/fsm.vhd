@@ -67,36 +67,15 @@ begin
         q <= '0';
 
         case state is
-            when zero =>
-                --if d = '1' then
+            when zero =>                     
                 q <= '0';
-                --elsif (d = '0') then
-                q <= '0';
-            --end if;
             when um =>
                 q <= '0';
-            --if d = '1' then
-            -- q <= '0';
-            --elsif (d = '0') then
-            --q <= '0';
-            -- end if;
             when dois =>
                 q <= '0';
-            --if (d = '1') then
-            --q <= '1';
-            --elsif (d = '0') then
-            -- q <= '0';
-            --end if;
             when tres =>
                 q <= '1';
-                if (d = '1') then
-                    q <= '1';
-                elsif (d = '0') then
-                    q <= '0';
-                end if;
-
         end case;
-
     end process;
 
 end architecture RTL;

@@ -1,43 +1,46 @@
 m255
 K4
 z2
+!s11e MIXED_VERSIONS
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/Aluno/workspaceSigasi/fsm
+dC:/Users/Aluno/Documents/elvis/fsm
 Efsm
-Z1 w1669299295
-Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
-Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-R0
+Z0 w1669408850
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 12
+Z4 dC:/Users/elvis/OneDrive/Documentos/Engenharia Eletronica/GITHUB/PLD-main/backupelvis/fsm_prova
 Z5 8fsm.vhd
 Z6 Ffsm.vhd
 l0
-L5
+L5 1
 VGTKIf<W4i6]E:08Kj__LU3
 !s100 ^j^CSO54YLX7fm=7DXIOP1
-Z7 OV;C;10.5b;63
+Z7 OV;C;2020.1;71
 32
-Z8 !s110 1669299326
+Z8 !s110 1669409192
 !i10b 1
-Z9 !s108 1669299326.000000
+Z9 !s108 1669409192.000000
 Z10 !s90 -reportprogress|300|fsm.vhd|testbench.vhd|
 Z11 !s107 testbench.vhd|fsm.vhd|
 !i113 1
 Z12 tExplicit 1 CvgOpt 0
 Artl
+R1
 R2
 R3
-R4
 Z13 DEx4 work 3 fsm 0 22 GTKIf<W4i6]E:08Kj__LU3
+!i122 12
 l18
-L14
-Z14 VDo7IS@:6HGY<6RF6d4NAg2
-Z15 !s100 3Qh:_HSY6AYL@F_W0c57c3
+Z14 L14 68
+Z15 VXVk9_TQS<QbodL;22EHce3
+Z16 !s100 b5WjCGUN;gI87;9XGGDgi3
 R7
 32
 R8
@@ -48,15 +51,16 @@ R11
 !i113 1
 R12
 Etestbench
-Z16 w1669299323
+Z17 w1669409107
+R1
 R2
 R3
+!i122 12
 R4
-R0
-Z17 8testbench.vhd
-Z18 Ftestbench.vhd
+Z18 8testbench.vhd
+Z19 Ftestbench.vhd
 l0
-L6
+L6 1
 VW0zEUk5JmPN>XC<:g5SEb1
 !s100 5XZRBke3il_U5BAh4FK]h1
 R7
@@ -70,14 +74,15 @@ R11
 R12
 Astimulus
 R13
+R1
 R2
 R3
-R4
-Z19 DEx4 work 9 testbench 0 22 W0zEUk5JmPN>XC<:g5SEb1
+Z20 DEx4 work 9 testbench 0 22 W0zEUk5JmPN>XC<:g5SEb1
+!i122 12
 l18
-L10
-VkVlR<5^cojIk4>g[7eo560
-!s100 <[h^FmzlIoH8me3ljVQdD0
+Z21 L10 45
+Z22 VIPVH3^O[_f=zR>@oo9I342
+Z23 !s100 9Y51POM`h`3hERB<kzok]1
 R7
 32
 R8
