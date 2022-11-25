@@ -18,40 +18,37 @@ end entity testbench;
 
 architecture stimulus of testbench is
     -- declaração de sinais
-    signal clk  : std_logic := '0';
-    signal addr : unsigned(4 downto 0);
-    signal data : std_logic_vector(15 downto 0);
+    signal clk   : std_logic := '0';
+    -- signal addr  : unsigned(4 downto 0);
+    --signal data  : std_logic_vector(6 downto 0);
+    signal reset : std_logic;
 
 begin                                   -- inicio do corpo da arquitetura
 
     -- instância de divisor_clock com nome dut, pode haver 
     -- quantas mais do que uma
-    dut : entity work.memoria
+    dut : entity work.main
+
         port map(
-            clk     => clk,
-            addr    => addr,
-            we      => '0',
-            data_in => "0101010101010101",
-            q       => data
+            clk   => clk,
+            reset => reset
         );
 
-    -- Laço de teste
-    addr_gen : process
-    begin
-        for i in 0 to 31 loop
-            addr <= to_unsigned(i, 5);
-            wait for 20 ns;
-        end loop;
-        wait;
-    end process;
-
-    -- clock
+    --gera um clock
     process
     begin
+        wait for 10 ns;
         clk <= '0';
         wait for 10 ns;
         clk <= '1';
-        wait for 10 ns;
+    end process;
+
+    --gera um reset
+    process
+    begin
+        wait for 60 ns;
+        reset <= '0';
+        wait;
     end process;
 
 end architecture stimulus;

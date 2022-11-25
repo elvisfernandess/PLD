@@ -3,9 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity main is
-    generic(
-        BITS : integer := 15
-    );
+   
     port(
         clk   : in std_logic;
         reset : in std_logic
@@ -14,12 +12,12 @@ end entity main;
 
 architecture RTL of main is
     signal addr         : unsigned(4 downto 0);
-    signal data_in_rom  : std_logic_vector(BITS downto 0);
+    signal data_in_rom  : std_logic_vector(15 downto 0);
     signal load         : std_logic;
     signal up           : std_logic;
-    signal data_in_pc   : unsigned(BITS downto 0);
-    signal data_pc      : unsigned(BITS downto 0);
-    signal data_rom     : unsigned(BITS downto 0);
+    signal data_in_pc   : unsigned(15 downto 0);
+    signal data_pc      : unsigned(15 downto 0);
+    signal data_rom     : unsigned(15 downto 0);
     signal en           : std_logic;
     signal datain       : unsigned(15 downto 0);
     signal opcode       : unsigned(3 downto 0);
@@ -31,7 +29,9 @@ architecture RTL of main is
     signal src          : unsigned(5 downto 0);
     signal dst          : unsigned(5 downto 0);
 
+    --signal saida : unsigned(15 downto 0);
     signal saida : std_logic_vector(15 downto 0);
+    signal dadoRF : unsigned(15 downto 0);
 
 begin
 
@@ -61,7 +61,7 @@ begin
             clk          => clk,
             reset        => reset,
             en           => en,
-            datain       => datain,
+            datain       => dadoRF,
             opcode       => opcode,
             cond         => cond,
             deslocamento => deslocamento,
@@ -72,6 +72,6 @@ begin
             dst          => dst
         );
 
-    --datain <= saida(15 downto 0);
+    dadoRF <= unsigned(saida(15 downto 0));
 
 end architecture RTL;

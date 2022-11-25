@@ -11,7 +11,7 @@
 vlib work
 
 #compila projeto: todos os aquivo. Ordem é importante
-vcom rom_ram.vhd testbench.vhd
+vcom main.vhd pc.vhd registrador_instrucao.vhd rom_ram.vhd testbench.vhd
 
 #Simula (work é o diretorio, testbench é o nome da entity)
 vsim -t ns work.testbench
