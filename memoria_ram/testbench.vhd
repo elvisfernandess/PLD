@@ -19,8 +19,8 @@ end entity testbench;
 architecture stimulus of testbench is
     -- declaração de sinais
     signal clk   : std_logic := '0';
-    -- signal addr  : unsigned(4 downto 0);
-    --signal data  : std_logic_vector(6 downto 0);
+    signal addr  : unsigned(4 downto 0);
+    signal data  : std_logic_vector(6 downto 0);
     signal reset : std_logic;
 
 begin                                   -- inicio do corpo da arquitetura

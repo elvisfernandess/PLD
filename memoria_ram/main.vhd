@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity main is
-   
+
     port(
         clk   : in std_logic;
         reset : in std_logic
@@ -29,8 +29,7 @@ architecture RTL of main is
     signal src          : unsigned(5 downto 0);
     signal dst          : unsigned(5 downto 0);
 
-    --signal saida : unsigned(15 downto 0);
-    signal saida : std_logic_vector(15 downto 0);
+    signal saida  : std_logic_vector(15 downto 0);
     signal dadoRF : unsigned(15 downto 0);
 
 begin
@@ -52,11 +51,11 @@ begin
             clk     => clk,
             addr    => addr,
             reset   => reset,
-            data_in => open,
+            data_in => "0000000000000000",
             data    => saida
         );
 
-    registrador_instrucao : entity work.registrador_instrucao
+    dut_registrador_instrucao : entity work.registrador_instrucao
         port map(
             clk          => clk,
             reset        => reset,
