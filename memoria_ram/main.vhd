@@ -72,6 +72,6 @@ begin
             dst          => dst
         );
 
-    datain <= saida(15 downto 0);
+    --datain <= saida(15 downto 0);
 
 end architecture RTL;
