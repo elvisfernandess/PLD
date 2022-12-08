@@ -72,5 +72,12 @@ begin
         );
 
     dadoRF <= unsigned(saida(15 downto 0));
+    
+    dut_fsm : entity work.fsm
+        port map(
+            clk => clk,
+            reset => reset
+        ) ;
+    
 
 end architecture RTL;

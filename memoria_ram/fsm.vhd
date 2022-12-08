@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity fsm is
     port(
         clk : in std_logic;
-        rst : in std_logic
+        reset : in std_logic
     );
 end entity fsm;
 
@@ -16,16 +16,16 @@ architecture RTL of fsm is
     signal opcode : unsigned(7 downto 0);
 begin
 
-    state_transation : process(clk, rst) is
+    state_transation : process(clk, reset) is
     begin
         state <= STOP;
-        if rst = '0' then
+        if reset = '0' then
             state <= fetch;
 
         elsif rising_edge(clk) then
             case state is
                 when STOP =>
-                    if rst = '0' then
+                    if reset = '0' then
                         state <= fetch;
                     end if;
 
