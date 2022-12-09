@@ -4,17 +4,18 @@ use ieee.numeric_std.all;
 
 entity fsm is
     port(
-        clk : in std_logic;
-        reset : in std_logic;
-        data_in_fsm    : out unsigned(4 downto 0)
+        clk                : in std_logic;
+        reset              : in std_logic;
+        signal data_in_fsm :    unsigned(15 downto 0);
+        signal opcode      :    unsigned(3 downto 0)
     );
 end entity fsm;
 
 architecture RTL of fsm is
     type state_type is (STOP, fetch, decode, halt, error, ld_imed, mem_calc, branch_compl);
 
-    signal state  : state_type;
-    signal opcode : unsigned(3 downto 0);
+    signal state : state_type;
+
 begin
 
     state_transation : process(clk, reset) is

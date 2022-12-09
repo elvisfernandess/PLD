@@ -32,9 +32,6 @@ architecture RTL of main is
     signal saida  : std_logic_vector(15 downto 0);
     signal dadoRF : unsigned(15 downto 0);
 
-    signal data_in_fsm    : unsigned(4 downto 0);
-    signal data_saida_fsm : unsigned(15 downto 0);
-
 begin
 
     pc : entity work.pc
@@ -80,9 +77,8 @@ begin
         port map(
             clk         => clk,
             reset       => reset,
-            data_in_fsm => data_rom
+            data_in_fsm => data_rom,
+            opcode      => opcode
         );
-
-    --data_in_fsm <= unsigned(data_pc(15 downto 0));
 
 end architecture RTL;
