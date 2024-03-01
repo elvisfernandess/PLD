@@ -1,0 +1,84 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Elvis/OneDrive/Documentos/_pld/reg4
+Ereg4
+Z1 w1708911945
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8reg4.vhd
+Z5 Freg4.vhd
+l0
+L4
+VS?7ChWMg0QjRb>9zVX^Zz2
+!s100 IeCC67nV]JVKFNBOfcz_G3
+Z6 OV;C;10.5b;63
+32
+Z7 !s110 1708912469
+!i10b 1
+Z8 !s108 1708912469.000000
+Z9 !s90 -reportprogress|300|reg4.vhd|tb_reg4.vhd|
+Z10 !s107 tb_reg4.vhd|reg4.vhd|
+!i113 1
+Z11 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+Z12 DEx4 work 4 reg4 0 22 S?7ChWMg0QjRb>9zVX^Zz2
+l16
+L14
+Z13 Vj][@W9bQVj[a6?6>@0jC21
+Z14 !s100 P0LgdC;zkjZ1fjDDDgMD<3
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+Etb_reg4
+Z15 w1708912116
+R2
+R3
+R0
+Z16 8tb_reg4.vhd
+Z17 Ftb_reg4.vhd
+l0
+L4
+VB^G@CJ7MGL1VEJX7Qcn2I1
+!s100 bj_Y6Ukh5CB:[UA1cRk5Z2
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+Atb
+R2
+R3
+Z18 DEx4 work 7 tb_reg4 0 22 B^G@CJ7MGL1VEJX7Qcn2I1
+l26
+L7
+Z19 VfkKZONjK3Zm6>2VzNY[[J3
+Z20 !s100 kWQng7ITCC1SNQWDVfNKe3
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11

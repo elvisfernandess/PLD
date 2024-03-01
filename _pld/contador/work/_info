@@ -1,0 +1,91 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Elvis/OneDrive/Documentos/_pld/contador
+Eones_count
+Z1 w1708473290
+Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z6 8contador.vhd
+Z7 Fcontador.vhd
+l0
+L6
+VbFHHij`mB;fGhJ0:S5mBP0
+!s100 3ZI;PNZhUVR]Fc`RHNSGe3
+Z8 OV;C;10.5b;63
+32
+Z9 !s110 1708911507
+!i10b 1
+Z10 !s108 1708911507.000000
+Z11 !s90 -reportprogress|300|contador.vhd|tb_contador.vhd|
+Z12 !s107 tb_contador.vhd|contador.vhd|
+!i113 1
+Z13 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+R5
+Z14 DEx4 work 10 ones_count 0 22 bFHHij`mB;fGhJ0:S5mBP0
+l14
+L13
+Z15 VS=L4=V44a;RP1e<fBN38B2
+Z16 !s100 LQkgXNKJcn=C44YDnb?o11
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Etestbench
+Z17 w1708473317
+R4
+R5
+R0
+Z18 8tb_contador.vhd
+Z19 Ftb_contador.vhd
+l0
+L5
+V?hhVh@88O1_7KcfYXUFPZ1
+!s100 PN6e2T:g6n:XY_Omh8K=e0
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Astimulus
+R2
+R3
+R14
+R4
+R5
+Z20 DEx4 work 9 testbench 0 22 ?hhVh@88O1_7KcfYXUFPZ1
+l15
+L9
+Z21 V4OiP3EA6U9T;9AeZSM3NZ1
+Z22 !s100 LR<QOeINSH7fKoEN6JF3U0
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13

@@ -1,0 +1,49 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Elvis/OneDrive/Documentos/_pld/logical_arithmetic_operations
+Elogical_arithmetic_operations
+Z1 w1709001638
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8logical_arithmetic_operations.vhd
+Z6 Flogical_arithmetic_operations.vhd
+l0
+L5
+V_Q9iY@jiDH19UU=?JO<UV1
+!s100 ?9HELU:3cBDAbHYi0l@0f2
+Z7 OV;C;10.5b;63
+32
+!s110 1709001689
+!i10b 1
+!s108 1709001689.000000
+Z8 !s90 -reportprogress|300|logical_arithmetic_operations.vhd|testbench_logical_arithmetic_operations.vhd|
+!s107 testbench_logical_arithmetic_operations.vhd|logical_arithmetic_operations.vhd|
+!i113 1
+Z9 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+DEx4 work 29 logical_arithmetic_operations 0 22 g5GX]GYf5>CP=e715UjAV2
+l15
+L14
+V]H;HeZPa?R41c^FK<@z1j1
+!s100 3O5=>YAbH;=cJF2X:S=S=3
+R7
+32
+!s110 1709001112
+!i10b 1
+!s108 1709001112.000000
+R8
+!s107 testbench_logical_arithmetic_operations.vhd|logical_arithmetic_operations.vhd|
+!i113 1
+R9

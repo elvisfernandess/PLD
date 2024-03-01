@@ -1,0 +1,87 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Elvis/OneDrive/Documentos/_pld/input_registers
+Einput_registers
+Z1 w1708913277
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8input_registers.vhd
+Z5 Finput_registers.vhd
+l0
+L4
+V79M_;4G;66Izgil_7AdX@3
+!s100 d63VlA^S>10BacfUJhGSo2
+Z6 OV;C;10.5b;63
+32
+Z7 !s110 1708913292
+!i10b 1
+Z8 !s108 1708913292.000000
+Z9 !s90 -reportprogress|300|input_registers.vhd|input_registers_tb.vhd|
+Z10 !s107 input_registers_tb.vhd|input_registers.vhd|
+!i113 1
+Z11 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+Z12 DEx4 work 15 input_registers 0 22 79M_;4G;66Izgil_7AdX@3
+l19
+L16
+V;5N0=;zf6OD:k7?bKU:Sb3
+!s100 0cn8?HB9U3YV?j8UQU[io2
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+Einput_registers_tb
+Z13 w1708913015
+Z14 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+R0
+Z15 8input_registers_tb.vhd
+Z16 Finput_registers_tb.vhd
+l0
+L5
+V>F<HXkK23Rl^]V:k]e07I2
+!s100 N8ln]Qb?^5H31^;Qcz`k83
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+Atb
+R12
+R14
+R2
+R3
+DEx4 work 18 input_registers_tb 0 22 >F<HXkK23Rl^]V:k]e07I2
+l17
+L8
+V<46=ogNU9G=UMal_L40`z2
+!s100 _]Y;D29DU<]H8h46RXNO;2
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11

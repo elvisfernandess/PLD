@@ -1,0 +1,87 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Elvis/OneDrive/Documentos/_pld/top_entity
+Etop_entity
+Z1 w1708996292
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8top_entity.vhd
+Z5 Ftop_entity.vhd
+l0
+L4
+Vm0_d7KX?4GWe3@kT?U:DO2
+!s100 Ag3ljdek3IkflCjZejh<?0
+Z6 OV;C;10.5b;63
+32
+Z7 !s110 1708998125
+!i10b 1
+Z8 !s108 1708998125.000000
+Z9 !s90 -reportprogress|300|top_entity.vhd|top_entity_tb.vhd|
+Z10 !s107 top_entity_tb.vhd|top_entity.vhd|
+!i113 1
+Z11 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+Z12 DEx4 work 10 top_entity 0 22 m0_d7KX?4GWe3@kT?U:DO2
+l30
+L14
+Z13 V]JS]RGcaCOgHQn;eYb5;Q1
+Z14 !s100 <@dm0n75Y83@m2hGz6k_P3
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+Etop_entity_tb
+Z15 w1708998004
+Z16 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+R0
+Z17 8top_entity_tb.vhd
+Z18 Ftop_entity_tb.vhd
+l0
+L5
+VC6YQTkHf6e`^]TDS4Z[iz2
+!s100 iN`7[Pe]6^JXHQ^6;`oL_2
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+Atb_arch
+R12
+R16
+R2
+R3
+Z19 DEx4 work 13 top_entity_tb 0 22 C6YQTkHf6e`^]TDS4Z[iz2
+l21
+L8
+Z20 V;Vklh=CDE0Xg3?CzLbaF`3
+Z21 !s100 J<;=lz^2cPfNQ8BU`i5N;3
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11

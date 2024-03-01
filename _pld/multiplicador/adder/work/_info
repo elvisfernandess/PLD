@@ -1,0 +1,89 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Elvis/OneDrive/Documentos/_pld/multiplicador/adder
+Eadder
+Z1 w1709171821
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8adder.vhd
+Z6 Fadder.vhd
+l0
+L6
+Viil@ZZ:ol=<RFG_9BE:h71
+!s100 AIS^@LCUjCNXQFk:iSBZ]2
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1709322691
+!i10b 1
+Z9 !s108 1709322691.000000
+Z10 !s90 -reportprogress|300|adder.vhd|testbench_adder.vhd|
+Z11 !s107 testbench_adder.vhd|adder.vhd|
+!i113 1
+Z12 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+Z13 DEx4 work 5 adder 0 22 iil@ZZ:ol=<RFG_9BE:h71
+l18
+L17
+Z14 VBW33XoDD8lMGcDf^7G3CA2
+Z15 !s100 n=QDShJD?oB:cXWU3hY9c3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Etestbench_adder
+Z16 w1709322583
+R2
+R3
+R4
+R0
+Z17 8testbench_adder.vhd
+Z18 Ftestbench_adder.vhd
+l0
+L12
+V>^7JDX3`f]IgC1;APD@SL3
+!s100 b`ii?D7bVgVM[SmIKaDHJ0
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Astimulus
+R13
+R2
+R3
+R4
+Z19 DEx4 work 15 testbench_adder 0 22 >^7JDX3`f]IgC1;APD@SL3
+l24
+L22
+Z20 V07EIO?N8^R:li>_47VL2<1
+Z21 !s100 DAk?`P_EzzDiheoc[o8Q53
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
