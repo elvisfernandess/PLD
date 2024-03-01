@@ -11,6 +11,7 @@ vsim -t ns work.testbench_adder
 view wave
 
 #Adiciona ondas específicas
+add wave -radix dec  /clk
 add wave -radix dec  /dataa
 add wave -radix dec  /datab
 add wave -radix dec  /sum
