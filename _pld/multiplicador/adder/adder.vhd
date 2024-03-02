@@ -8,7 +8,7 @@ entity adder is
         constant DATA_WIDTH : integer := 16  -- Largura padrão para os vetores UNSIGNED
     );
     port (
-        clk       : in  std_logic;      --! clock
+        clk       : in  std_logic;
         dataa : in unsigned(DATA_WIDTH - 1 downto 0);
         datab : in unsigned(DATA_WIDTH - 1 downto 0);
         sum   : out unsigned(DATA_WIDTH - 1 downto 0)

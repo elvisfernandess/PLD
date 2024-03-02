@@ -4,9 +4,9 @@ use ieee.numeric_std.all;
 
 entity testbench_adder is
     constant DATA_WIDTH : integer := 16;  -- Largura padrão para os vetores UNSIGNED
-    signal clk : std_logic := '1';  -- Sinal de clock
-    signal dataa : unsigned(DATA_WIDTH - 1 downto 0);
-    signal datab : unsigned(DATA_WIDTH - 1 downto 0);
+    signal clk : std_logic := '0';  -- Sinal de clock
+    signal dataa : unsigned(DATA_WIDTH - 1 downto 0):=x"0000";
+    signal datab : unsigned(DATA_WIDTH - 1 downto 0):=x"0000";
     signal sum : unsigned(DATA_WIDTH - 1 downto 0);
 end entity testbench_adder;
 
@@ -38,9 +38,12 @@ begin
     -- Estímulos para dataa e datab (você pode modificar conforme necessário)
     stimulus_process: process
     begin
-        wait for 10 ns;  -- Aguarda um ciclo de clock antes de aplicar os estímulos
+        wait for 20 ns;  -- Aguarda um ciclo de clock antes de aplicar os estímulos
         dataa <= x"01A3";
         datab <= x"01A3";
+		wait for 20 ns;  -- Aguarda um ciclo de clock antes de aplicar os estímulos
+        dataa <= x"01B3";
+        datab <= x"01B3";
         wait;
     end process;
 	
