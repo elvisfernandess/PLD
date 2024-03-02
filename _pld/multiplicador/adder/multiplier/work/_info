@@ -1,0 +1,89 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Elvis/OneDrive/Documentos/_pld/multiplicador/multiplier
+Emultiplier
+Z1 w1709398198
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8multiplier.vhd
+Z6 Fmultiplier.vhd
+l0
+L5
+V@dH0D@P]WNhjfz54k@1lT1
+!s100 9ka9D_@5A5ezBFhE?bXH71
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1709398203
+!i10b 1
+Z9 !s108 1709398203.000000
+Z10 !s90 -reportprogress|300|multiplier.vhd|testbench_multiplier.vhd|
+Z11 !s107 testbench_multiplier.vhd|multiplier.vhd|
+!i113 1
+Z12 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+Z13 DEx4 work 10 multiplier 0 22 @dH0D@P]WNhjfz54k@1lT1
+l19
+L16
+VQ3jZb8Dh`o_o0<`N:SDjd2
+!s100 o6510@bd36;Q96CCNOkkB2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Etestbench_multiplier
+Z14 w1709396913
+R2
+R3
+R4
+R0
+Z15 8testbench_multiplier.vhd
+Z16 Ftestbench_multiplier.vhd
+l0
+L5
+VElYG=UX[LRBVZ3X?_S2<;1
+!s100 H3Pgm7Sa5Uo:mDnW_2UQ]3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Astimulus
+R13
+R2
+R3
+R4
+Z17 DEx4 work 20 testbench_multiplier 0 22 ElYG=UX[LRBVZ3X?_S2<;1
+l14
+L9
+Z18 VnQ`hWd6VL_iz90>NghMje3
+Z19 !s100 24NOW<1b9mI6jbd<_=VR03
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
