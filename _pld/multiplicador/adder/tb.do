@@ -1,3 +1,9 @@
+#-------------------------------------------------------
+#--! Tarefa 1 - ADDER - Somador
+#--! Aluno: Elvis Fernandes
+#--! Data: 01/03/2024
+#--! Arquivo: tb.do
+#-------------------------------------------------------
 #Cria biblioteca do projeto
 vlib work
 
