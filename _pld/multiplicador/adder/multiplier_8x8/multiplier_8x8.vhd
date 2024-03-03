@@ -8,74 +8,63 @@ entity multiplier_8x8 is
     );
     port (
         clk             : in  std_logic;
-        reset           : in  std_logic;
         dataa           : in  unsigned(DATA_WIDTH - 1 downto 0);
         datab           : in  unsigned(DATA_WIDTH - 1 downto 0);
-        product8x8_out  : out unsigned((2 * DATA_WIDTH) - 1 downto 0);
-        done_flag       : out std_logic;
-        seg_display     : out std_logic_vector(6 downto 0)
+        result          : out unsigned((2 * DATA_WIDTH) - 1 downto 0)
     );
 end entity multiplier_8x8;
 
 architecture RTL of multiplier_8x8 is
-    constant RESULT_WIDTH : integer := (2 * DATA_WIDTH) - 1;
-    type state_type is (IDLE, MULTIPLY_1, MULTIPLY_2, MULTIPLY_3, MULTIPLY_4, ADD_RESULT);
+    -- Definição dos estados para o controle do FSM
+    type state_type is (IDLE, MULTIPLY_1, MULTIPLY_2, MULTIPLY_3, MULTIPLY_4, UPDATE_RESULT);
+    
+    -- Sinal para o estado atual do FSM
     signal state : state_type := IDLE;
-    signal result_temp : unsigned(RESULT_WIDTH downto 0) := (others => '0');
-    signal accumulator : unsigned(RESULT_WIDTH downto 0) := (others => '0');
-    signal counter : integer range 0 to 4 := 0; -- Alterado para 4 para incluir todos os ciclos
+    
+    -- Sinal para armazenar o resultado da multiplicação
+    signal result_temp : unsigned((2 * DATA_WIDTH) - 1 downto 0) := (others => '0');  -- Inicializa com zeros
+    
 begin
-    process(clk, reset)
+    process(clk)
     begin
-        if reset = '1' then
-            state <= IDLE;
-            result_temp <= (others => '0');
-            accumulator <= (others => '0');
-            counter <= 0;
-            done_flag <= '0';  -- Reiniciado para '0' durante o reset
-            seg_display <= (others => '0');
-        elsif rising_edge(clk) then
+        if rising_edge(clk) then
             case state is
                 when IDLE =>
-                    if counter = 0 then
-                        result_temp <= (others => '0');
-                        accumulator <= (others => '0');
-                    end if;
-                    if counter < 4 then
-                        state <= MULTIPLY_1;
-                    else
-                        state <= ADD_RESULT;
-                    end if;
+                    -- Inicia a multiplicação dos operandos
+                    result_temp <= (others => '0'); -- Reinicia o resultado temporário
+                    state <= MULTIPLY_1;
                     
                 when MULTIPLY_1 =>
+                    -- Realiza a primeira parte da multiplicação
                     result_temp((2 * DATA_WIDTH) - 1 downto DATA_WIDTH) <= (others => '0');
                     result_temp(DATA_WIDTH - 1 downto 0) <= dataa(7 downto 4) * datab(7 downto 4);
                     state <= MULTIPLY_2;
                     
                 when MULTIPLY_2 =>
+                    -- Realiza a segunda parte da multiplicação
                     result_temp((2 * DATA_WIDTH) - 1 downto DATA_WIDTH) <= result_temp((2 * DATA_WIDTH) - 1 downto DATA_WIDTH) + dataa(7 downto 4) * datab(3 downto 0);
                     state <= MULTIPLY_3;
                     
                 when MULTIPLY_3 =>
+                    -- Realiza a terceira parte da multiplicação
                     result_temp((2 * DATA_WIDTH) - 1 downto DATA_WIDTH) <= result_temp((2 * DATA_WIDTH) - 1 downto DATA_WIDTH) + dataa(3 downto 0) * datab(7 downto 4);
                     state <= MULTIPLY_4;
                     
                 when MULTIPLY_4 =>
+                    -- Realiza a última parte da multiplicação
                     result_temp(DATA_WIDTH - 1 downto 0) <= dataa(3 downto 0) * datab(3 downto 0);
-                    counter <= counter + 1;
-                    if counter < 4 then  -- Alterado para 4 para incluir todos os ciclos
-                        state <= MULTIPLY_1;
-                    else
-                        state <= ADD_RESULT;
-                    end if;
+                    state <= UPDATE_RESULT;
                     
-                when ADD_RESULT =>
-                    accumulator <= accumulator + result_temp;
-                    product8x8_out <= accumulator;
-                    done_flag <= '1';  -- Definido como '1' ao final da multiplicação
-                    seg_display <= "0000000"; -- Ajuste os sinais para ligar o display de 7 segmentos conforme necessário
+                when UPDATE_RESULT =>
+                    -- Atualiza o resultado
+                    result <= result_temp;
+                    state <= IDLE;
+                    
+                when others =>
+                    -- Estado de erro
                     state <= IDLE;
             end case;
         end if;
     end process;
+
 end architecture RTL;

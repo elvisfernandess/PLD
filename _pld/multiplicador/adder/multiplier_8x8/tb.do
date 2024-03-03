@@ -20,8 +20,10 @@ view wave
 add wave -radix dec  /clk
 add wave -radix dec  /dataa
 add wave -radix dec  /datab
-add wave -radix dec  /product8x8_out
-add wave -radix dec  /done_flag 
+add wave -radix dec  /result
+add wave /dut/state
+
+
 
 #Simula até um 500ns
 run 500ns

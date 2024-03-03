@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/Users/Elvis/OneDrive/Documentos/_pld/multiplicador/multipli
 Emultiplier_8x8
-Z0 w1709421978
+Z0 w1709436166
 Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
@@ -18,13 +18,13 @@ Z5 8multiplier_8x8.vhd
 Z6 Fmultiplier_8x8.vhd
 l0
 L5
-V@a7i[LVoKLD<7iJ4bM==A2
-!s100 G14cjY=CU`M>]g[I]TRY;0
+V;TN2dbcBgAEjSgc8G2n;70
+!s100 kzOGz:WKm?PUMiULEMXl82
 Z7 OV;C;10.5b;63
 32
-Z8 !s110 1709424682
+Z8 !s110 1709436670
 !i10b 1
-Z9 !s108 1709424682.000000
+Z9 !s108 1709436670.000000
 Z10 !s90 -reportprogress|300|multiplier_8x8.vhd|testbench_multiplier_8x8.vhd|
 Z11 !s107 testbench_multiplier_8x8.vhd|multiplier_8x8.vhd|
 !i113 1
@@ -33,11 +33,11 @@ Artl
 R1
 R2
 R3
-Z13 DEx4 work 14 multiplier_8x8 0 22 @a7i[LVoKLD<7iJ4bM==A2
+Z13 DEx4 work 14 multiplier_8x8 0 22 ;TN2dbcBgAEjSgc8G2n;70
 l27
-L20
-Z14 V78KNJ^AI`?mEWG6H1j[mo0
-Z15 !s100 ohU7?LbocNO;nZ6WFd`AA0
+L17
+Z14 V@l@lTA:4E7=`id2@l;g1[1
+Z15 !s100 WG5bd?j3]5_S^z2=LQK?_3
 R7
 32
 R8
@@ -47,23 +47,62 @@ R10
 R11
 !i113 1
 R12
-Etestbench_multiplier
-Z16 w1709420508
+Emultiplier_8x8_fsm
+Z16 w1709425815
 R1
 R2
 R3
 R4
-Z17 8testbench_multiplier_8x8.vhd
-Z18 Ftestbench_multiplier_8x8.vhd
+R5
+R6
+l0
+L5
+VNcn7YgSm]TYhhgKZW1^W81
+!s100 0AB:X;JaGigm?T6K9z:541
+R7
+32
+Z17 !s110 1709425979
+!i10b 1
+Z18 !s108 1709425979.000000
+R10
+R11
+!i113 1
+R12
+Artl
+R1
+R2
+R3
+DEx4 work 18 multiplier_8x8_fsm 0 22 Ncn7YgSm]TYhhgKZW1^W81
+l20
+L14
+V2]n;LHY?GTJnO67J@XWm?3
+!s100 Ne2K@o3J3;Y37B^3gV<;_0
+R7
+32
+R17
+!i10b 1
+R18
+R10
+R11
+!i113 1
+R12
+Etestbench_multiplier
+Z19 w1709420508
+R1
+R2
+R3
+R4
+Z20 8testbench_multiplier_8x8.vhd
+Z21 Ftestbench_multiplier_8x8.vhd
 l0
 L5
 VE62>5B7FjGC<^b@jiWB^@2
 !s100 NcIHH8:G9DWdUH_kDc:n>1
 R7
 32
-Z19 !s110 1709420512
+Z22 !s110 1709420512
 !i10b 1
-Z20 !s108 1709420512.000000
+Z23 !s108 1709420512.000000
 R10
 R11
 !i113 1
@@ -79,25 +118,44 @@ Vgf24>fNjKV7VCk5DJgCOU3
 !s100 4Oz^_PYnDkZk=?akkD8Ld0
 R7
 32
-R19
+R22
 !i10b 1
-R20
+R23
 R10
 R11
 !i113 1
 R12
 Etestbench_multiplier_8x8
-Z21 w1709421415
+Z24 w1709436667
 R1
 R2
 R3
 R4
-R17
-R18
+R20
+R21
 l0
 L5
-VgnkD]Wlaa3[89?F3MM@W72
-!s100 b;CnFOg;61j=36=<aVGFJ3
+VSf3OQmYEjk9mCR]fE4jWQ2
+!s100 Z[05a[7VozEnE>]W^@c@H0
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Atestbench
+R13
+R1
+R2
+R3
+Z25 DEx4 work 24 testbench_multiplier_8x8 0 22 Sf3OQmYEjk9mCR]fE4jWQ2
+l22
+L8
+VB`3omHE5hKOhImF8fWn8L2
+!s100 RDL;nzFmCWSMSR4LS6=A70
 R7
 32
 R8
@@ -108,20 +166,22 @@ R11
 !i113 1
 R12
 Astimulus
+DEx4 work 14 multiplier_8x8 0 22 HJ9EgVkWE]l2GIc7^FaiT3
 R1
 R2
 R3
-Z22 DEx4 work 24 testbench_multiplier_8x8 0 22 gnkD]Wlaa3[89?F3MM@W72
-l17
+DEx4 work 24 testbench_multiplier_8x8 0 22 gnkD]Wlaa3[89?F3MM@W72
+l24
 L9
-Z23 Vh<:X_9X5Y3od<jk>BEXDM2
-Z24 !s100 5_X4^[C8KX_bJ:7IT>F7h2
+VAKL<OOKVOFCB6SBNE^1062
+!s100 I6;47CQP@z>D[I:G[>57b1
 R7
 32
-R8
+!s110 1709435271
 !i10b 1
-R9
+!s108 1709435271.000000
 R10
 R11
 !i113 1
 R12
+w1709435269
