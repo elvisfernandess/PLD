@@ -1,0 +1,89 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Elvis/OneDrive/Documentos/_pld/multiplicador/Projetos/mux_when
+Emux_when
+Z1 w1710726820
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8mux_when.vhd
+Z6 Fmux_when.vhd
+l0
+L12
+VlT7;VJnW;8UI5SDXeFnSI2
+!s100 Ahef>KMbeFdiLG7h]oZSZ0
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1710726833
+!i10b 1
+Z9 !s108 1710726833.000000
+Z10 !s90 -reportprogress|300|mux_when.vhd|testbench_mux_when.vhd|
+Z11 !s107 testbench_mux_when.vhd|mux_when.vhd|
+!i113 1
+Z12 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+Z13 DEx4 work 8 mux_when 0 22 lT7;VJnW;8UI5SDXeFnSI2
+l25
+L24
+VNUdi;`Ad4Q]1b`cf[R46d1
+!s100 IQC[[l[66n6h]meP>Mdgk3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Etestbench_mux_when
+Z14 w1710726771
+R2
+R3
+R4
+R0
+Z15 8testbench_mux_when.vhd
+Z16 Ftestbench_mux_when.vhd
+l0
+L12
+V5@4UN03]jMe>DF[9LAAXA2
+!s100 ClH5G9?de?RgV=@c[Ve3>2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Astimulus
+R13
+R2
+R3
+R4
+DEx4 work 18 testbench_mux_when 0 22 5@4UN03]jMe>DF[9LAAXA2
+l21
+L16
+VI5NA`z7MZ^0>NVVoW^0Y[0
+!s100 d__C>:b^8f9[a9?:?Oobj3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
