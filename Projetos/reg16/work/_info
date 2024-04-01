@@ -1,0 +1,89 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/PLD/Projetos/reg16
+Ereg16
+Z1 w1711934458
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8reg16.vhd
+Z6 Freg16.vhd
+l0
+L20
+V?IkU]B96?Ghhk<M8kGQmh2
+!s100 eT>Hc>;9PNZ9`T?KgYKz:0
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1711934624
+!i10b 1
+Z9 !s108 1711934624.000000
+Z10 !s90 -reportprogress|300|reg16.vhd|testbench_reg16.vhd|
+Z11 !s107 testbench_reg16.vhd|reg16.vhd|
+!i113 1
+Z12 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+Z13 DEx4 work 5 reg16 0 22 ?IkU]B96?Ghhk<M8kGQmh2
+l35
+L33
+V`ZGPNgChibU[cE5>5Zij<2
+!s100 AHTeh:YVaJMAd]gS8Ve8z3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Etestbench_reg16
+R1
+R2
+R3
+R4
+R0
+Z14 8testbench_reg16.vhd
+Z15 Ftestbench_reg16.vhd
+l0
+L13
+V0H]aP1Vm4FLX16IlknPG32
+!s100 lG<HRczM8XfX0Ic`<dUFX3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Astimulus
+R13
+R2
+R3
+R4
+DEx4 work 15 testbench_reg16 0 22 0H]aP1Vm4FLX16IlknPG32
+l26
+L17
+VjQoaT`>1:?ieDB?FC0UEl2
+!s100 PRX^e;HAh=T9IFzD37YgG1
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12

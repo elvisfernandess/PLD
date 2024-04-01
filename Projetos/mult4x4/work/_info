@@ -1,0 +1,89 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/PLD/Projetos/mult4x4
+Emult4x4
+Z1 w1711932352
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8mult4x4.vhd
+Z6 Fmult4x4.vhd
+l0
+L12
+VQ_70>5B[Gh@ENYh^_heVa3
+!s100 OVDEIJR?b]?mQAKLA4XX02
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1711932607
+!i10b 1
+Z9 !s108 1711932607.000000
+Z10 !s90 -reportprogress|300|mult4x4.vhd|testbench_mult4x4.vhd|
+Z11 !s107 testbench_mult4x4.vhd|mult4x4.vhd|
+!i113 1
+Z12 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+Z13 DEx4 work 7 mult4x4 0 22 Q_70>5B[Gh@ENYh^_heVa3
+l25
+L23
+VQi>E7TA90f1X[iJ1YS^FS3
+!s100 =Ug5ef6F]jlYcGHR`c@S51
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Etestbench_mult4x4
+Z14 w1711932478
+R2
+R3
+R4
+R0
+Z15 8testbench_mult4x4.vhd
+Z16 Ftestbench_mult4x4.vhd
+l0
+L12
+VfL2mQ9`R359K[cj3Lc^F70
+!s100 RT63YXh5OnOVhb42W0;RQ3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Astimulus
+R13
+R2
+R3
+R4
+DEx4 work 17 testbench_mult4x4 0 22 fL2mQ9`R359K[cj3Lc^F70
+l21
+L16
+VAY6gf7mTXd;_7V4n`VhDW0
+!s100 ^0k5>]Ee=991fVb37oNAd0
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
