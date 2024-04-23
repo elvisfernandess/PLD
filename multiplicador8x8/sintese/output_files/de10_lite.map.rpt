@@ -1,0 +1,1111 @@
+Analysis & Synthesis report for de10_lite
+Mon Apr 22 23:57:08 2024
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |de10_lite|multiplicador8x8:dut|mult_control:mult_control_inst|state
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst
+ 15. Parameter Settings for User Entity Instance: unnamed:u0|altsource_probe_top:in_system_sources_probes_0
+ 16. Parameter Settings for User Entity Instance: unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl
+ 17. Parameter Settings for User Entity Instance: multiplicador8x8:dut
+ 18. Parameter Settings for User Entity Instance: multiplicador8x8:dut|adder:adder
+ 19. Parameter Settings for User Entity Instance: multiplicador8x8:dut|counter:counter
+ 20. Parameter Settings for User Entity Instance: multiplicador8x8:dut|mult4x4:mult4x4
+ 21. Parameter Settings for User Entity Instance: multiplicador8x8:dut|mux4:mux4
+ 22. Parameter Settings for User Entity Instance: multiplicador8x8:dut|mux_when:mux_when
+ 23. Parameter Settings for User Entity Instance: multiplicador8x8:dut|reg16:reg16
+ 24. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 25. Parameter Settings for Inferred Entity Instance: multiplicador8x8:dut|mult4x4:mult4x4|lpm_mult:Mult0
+ 26. lpm_mult Parameter Settings by Entity Instance
+ 27. Port Connectivity Checks: "seven_segment_cntrl:seven_segment_cntrl_hex4"
+ 28. Port Connectivity Checks: "seven_segment_cntrl:seven_segment_cntrl_hex3"
+ 29. Port Connectivity Checks: "seven_segment_cntrl:seven_segment_cntrl_hex2"
+ 30. Port Connectivity Checks: "seven_segment_cntrl:seven_segment_cntrl_hex1"
+ 31. Port Connectivity Checks: "multiplicador8x8:dut|seven_segment_cntrl:seven_segment_cntrl"
+ 32. Port Connectivity Checks: "multiplicador8x8:dut"
+ 33. Port Connectivity Checks: "unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl"
+ 34. Port Connectivity Checks: "unnamed:u0|altsource_probe_top:in_system_sources_probes_0"
+ 35. Port Connectivity Checks: "unnamed:u0"
+ 36. Post-Synthesis Netlist Statistics for Top Partition
+ 37. Elapsed Time Per Partition
+ 38. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Apr 22 23:57:08 2024          ;
+; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Revision Name                      ; de10_lite                                      ;
+; Top-level Entity Name              ; de10_lite                                      ;
+; Family                             ; MAX 10                                         ;
+; Total logic elements               ; 314                                            ;
+;     Total combinational functions  ; 293                                            ;
+;     Dedicated logic registers      ; 174                                            ;
+; Total registers                    ; 174                                            ;
+; Total pins                         ; 149                                            ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 1                                              ;
+; Total PLLs                         ; 0                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; de10_lite          ; de10_lite          ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                                                                                           ;
++-------------------------------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+; File Name with User-Entered Path                                                                                              ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                                                                      ; Library     ;
++-------------------------------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+; ../shifter.vhd                                                                                                                ; yes             ; User VHDL File                               ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/shifter.vhd                                                                ;             ;
+; ../seven_segment_cntrl.vhd                                                                                                    ; yes             ; User VHDL File                               ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/seven_segment_cntrl.vhd                                                    ;             ;
+; ../reg16.vhd                                                                                                                  ; yes             ; User VHDL File                               ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/reg16.vhd                                                                  ;             ;
+; ../mux_when.vhd                                                                                                               ; yes             ; User VHDL File                               ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/mux_when.vhd                                                               ;             ;
+; ../mux_sel.vhd                                                                                                                ; yes             ; User VHDL File                               ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/mux_sel.vhd                                                                ;             ;
+; ../multiplicador8x8.vhd                                                                                                       ; yes             ; User VHDL File                               ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/multiplicador8x8.vhd                                                       ;             ;
+; ../mult4x4.vhd                                                                                                                ; yes             ; User VHDL File                               ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/mult4x4.vhd                                                                ;             ;
+; ../mult_control.vhd                                                                                                           ; yes             ; User VHDL File                               ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/mult_control.vhd                                                           ;             ;
+; ../counter.vhd                                                                                                                ; yes             ; User VHDL File                               ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/counter.vhd                                                                ;             ;
+; ../adder.vhd                                                                                                                  ; yes             ; User VHDL File                               ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/adder.vhd                                                                  ;             ;
+; de10_lite.vhd                                                                                                                 ; yes             ; User VHDL File                               ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd                                                      ;             ;
+; c:/users/elvis/onedrive/documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/unnamed/submodules/altsource_probe_top.v ; yes             ; Auto-Found Verilog HDL File                  ; c:/users/elvis/onedrive/documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/unnamed/submodules/altsource_probe_top.v                     ; unnamed     ;
+; c:/users/elvis/onedrive/documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/unnamed/unnamed.v                        ; yes             ; Auto-Found Verilog HDL File                  ; c:/users/elvis/onedrive/documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/unnamed/unnamed.v                                            ; unnamed     ;
+; altsource_probe.v                                                                                                             ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsource_probe.v                                                                       ;             ;
+; sld_jtag_endpoint_adapter.vhd                                                                                                 ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd                                                           ;             ;
+; sld_jtag_endpoint_adapter_impl.sv                                                                                             ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv                                                       ;             ;
+; altsource_probe_body.vhd                                                                                                      ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsource_probe_body.vhd                                                                ;             ;
+; sld_rom_sr.vhd                                                                                                                ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_rom_sr.vhd                                                                          ;             ;
+; sld_hub.vhd                                                                                                                   ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_hub.vhd                                                                             ; altera_sld  ;
+; db/ip/slde7a58a48/alt_sld_fab.v                                                                                               ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/slde7a58a48/alt_sld_fab.v                                    ; alt_sld_fab ;
+; db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab.v                                                                        ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab ;
+; db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab_ident.sv                                                                 ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab ;
+; db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab_presplit.sv                                                              ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab ;
+; db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd                                                            ; yes             ; Encrypted Auto-Found VHDL File               ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
+; db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab_splitter.sv                                                              ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
+; sld_jtag_hub.vhd                                                                                                              ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_jtag_hub.vhd                                                                        ;             ;
+; lpm_mult.tdf                                                                                                                  ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mult.tdf                                                                            ;             ;
+; aglobal231.inc                                                                                                                ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc                                                                          ;             ;
+; lpm_add_sub.inc                                                                                                               ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_add_sub.inc                                                                         ;             ;
+; multcore.inc                                                                                                                  ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/multcore.inc                                                                            ;             ;
+; bypassff.inc                                                                                                                  ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/bypassff.inc                                                                            ;             ;
+; altshift.inc                                                                                                                  ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altshift.inc                                                                            ;             ;
+; db/mult_0ls.tdf                                                                                                               ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/mult_0ls.tdf                                                    ;             ;
+; db/mult_9js.tdf                                                                                                               ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/mult_9js.tdf                                                    ;             ;
++-------------------------------------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                            ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimated Total logic elements              ; 314                      ;
+;                                             ;                          ;
+; Total combinational functions               ; 293                      ;
+; Logic element usage by number of LUT inputs ;                          ;
+;     -- 4 input functions                    ; 126                      ;
+;     -- 3 input functions                    ; 112                      ;
+;     -- <=2 input functions                  ; 55                       ;
+;                                             ;                          ;
+; Logic elements by mode                      ;                          ;
+;     -- normal mode                          ; 258                      ;
+;     -- arithmetic mode                      ; 35                       ;
+;                                             ;                          ;
+; Total registers                             ; 174                      ;
+;     -- Dedicated logic registers            ; 174                      ;
+;     -- I/O registers                        ; 0                        ;
+;                                             ;                          ;
+; I/O pins                                    ; 149                      ;
+;                                             ;                          ;
+; Embedded Multiplier 9-bit elements          ; 1                        ;
+;                                             ;                          ;
+; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
+; Maximum fan-out                             ; 173                      ;
+; Total fan-out                               ; 1741                     ;
+; Average fan-out                             ; 2.15                     ;
++---------------------------------------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                   ; Entity Name                       ; Library Name ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; |de10_lite                                                                                                                              ; 293 (2)             ; 174 (0)                   ; 0           ; 0          ; 1            ; 1       ; 0         ; 149  ; 0            ; 0          ; |de10_lite                                                                                                                                                                                                                                                                                                                                            ; de10_lite                         ; work         ;
+;    |lpm_mult:Mult0|                                                                                                                     ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 1            ; 1       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|lpm_mult:Mult0                                                                                                                                                                                                                                                                                                                             ; lpm_mult                          ; work         ;
+;       |mult_0ls:auto_generated|                                                                                                         ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 1            ; 1       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|lpm_mult:Mult0|mult_0ls:auto_generated                                                                                                                                                                                                                                                                                                     ; mult_0ls                          ; work         ;
+;    |multiplicador8x8:dut|                                                                                                               ; 89 (0)              ; 24 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|multiplicador8x8:dut                                                                                                                                                                                                                                                                                                                       ; multiplicador8x8                  ; work         ;
+;       |counter:counter|                                                                                                                 ; 2 (2)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|multiplicador8x8:dut|counter:counter                                                                                                                                                                                                                                                                                                       ; counter                           ; work         ;
+;       |mult4x4:mult4x4|                                                                                                                 ; 31 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|multiplicador8x8:dut|mult4x4:mult4x4                                                                                                                                                                                                                                                                                                       ; mult4x4                           ; work         ;
+;          |lpm_mult:Mult0|                                                                                                               ; 31 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|multiplicador8x8:dut|mult4x4:mult4x4|lpm_mult:Mult0                                                                                                                                                                                                                                                                                        ; lpm_mult                          ; work         ;
+;             |mult_9js:auto_generated|                                                                                                   ; 31 (31)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|multiplicador8x8:dut|mult4x4:mult4x4|lpm_mult:Mult0|mult_9js:auto_generated                                                                                                                                                                                                                                                                ; mult_9js                          ; work         ;
+;       |mult_control:mult_control_inst|                                                                                                  ; 17 (17)             ; 6 (6)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|multiplicador8x8:dut|mult_control:mult_control_inst                                                                                                                                                                                                                                                                                        ; mult_control                      ; work         ;
+;       |mux4:mux4|                                                                                                                       ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|multiplicador8x8:dut|mux4:mux4                                                                                                                                                                                                                                                                                                             ; mux4                              ; work         ;
+;       |mux_when:mux_when|                                                                                                               ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|multiplicador8x8:dut|mux_when:mux_when                                                                                                                                                                                                                                                                                                     ; mux_when                          ; work         ;
+;       |reg16:reg16|                                                                                                                     ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|multiplicador8x8:dut|reg16:reg16                                                                                                                                                                                                                                                                                                           ; reg16                             ; work         ;
+;       |shifter:shifter|                                                                                                                 ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|multiplicador8x8:dut|shifter:shifter                                                                                                                                                                                                                                                                                                       ; shifter                           ; work         ;
+;    |seven_segment_cntrl:seven_segment_cntrl_hex1|                                                                                       ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|seven_segment_cntrl:seven_segment_cntrl_hex1                                                                                                                                                                                                                                                                                               ; seven_segment_cntrl               ; work         ;
+;    |seven_segment_cntrl:seven_segment_cntrl_hex3|                                                                                       ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|seven_segment_cntrl:seven_segment_cntrl_hex3                                                                                                                                                                                                                                                                                               ; seven_segment_cntrl               ; work         ;
+;    |sld_hub:auto_hub|                                                                                                                   ; 114 (1)             ; 78 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
+;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 113 (0)             ; 78 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
+;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 113 (0)             ; 78 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
+;             |alt_sld_fab_alt_sld_fab:alt_sld_fab|                                                                                       ; 113 (1)             ; 78 (5)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                                                    ; alt_sld_fab_alt_sld_fab           ; alt_sld_fab  ;
+;                |alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|                                                                            ; 112 (0)             ; 73 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                                        ; alt_sld_fab_alt_sld_fab_sldfabric ; alt_sld_fab  ;
+;                   |sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|                                                                        ; 112 (75)            ; 73 (45)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                           ; sld_jtag_hub                      ; work         ;
+;                      |sld_rom_sr:hub_info_reg|                                                                                          ; 19 (19)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg   ; sld_rom_sr                        ; work         ;
+;                      |sld_shadow_jsm:shadow_jsm|                                                                                        ; 18 (18)             ; 19 (19)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm ; sld_shadow_jsm                    ; altera_sld   ;
+;    |unnamed:u0|                                                                                                                         ; 84 (0)              ; 72 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|unnamed:u0                                                                                                                                                                                                                                                                                                                                 ; unnamed                           ; unnamed      ;
+;       |altsource_probe_top:in_system_sources_probes_0|                                                                                  ; 84 (0)              ; 72 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|unnamed:u0|altsource_probe_top:in_system_sources_probes_0                                                                                                                                                                                                                                                                                  ; altsource_probe_top               ; unnamed      ;
+;          |altsource_probe:issp_impl|                                                                                                    ; 84 (0)              ; 72 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl                                                                                                                                                                                                                                                        ; altsource_probe                   ; work         ;
+;             |altsource_probe_body:altsource_probe_body_inst|                                                                            ; 84 (3)              ; 72 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst                                                                                                                                                                                                         ; altsource_probe_body              ; work         ;
+;                |altsource_probe_impl:\equal_width_gen:equal_width_inst|                                                                 ; 81 (69)             ; 72 (65)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst                                                                                                                                                  ; altsource_probe_impl              ; work         ;
+;                   |sld_rom_sr:\no_instance_id_gen:rom_info_inst|                                                                        ; 12 (12)             ; 7 (7)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |de10_lite|unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|sld_rom_sr:\no_instance_id_gen:rom_info_inst                                                                                                     ; sld_rom_sr                        ; work         ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 1           ;
+; Simple Multipliers (18-bit)           ; 0           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 1           ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 1           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++--------+---------------------------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+; Vendor ; IP Core Name                    ; Version ; Release Date ; License Type ; Entity Instance                                                                                                                                                                                                                                                                ; IP Include File                                                                             ;
++--------+---------------------------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+; Altera ; Signal Tap                      ; N/A     ; N/A          ; Licensed     ; |de10_lite|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                 ;                                                                                             ;
+; Altera ; Signal Tap                      ; N/A     ; N/A          ; Licensed     ; |de10_lite|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                             ;                                                                                             ;
+; Altera ; Signal Tap                      ; N/A     ; N/A          ; Licensed     ; |de10_lite|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_presplit:presplit   ;                                                                                             ;
+; Altera ; Signal Tap                      ; N/A     ; N/A          ; Licensed     ; |de10_lite|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric ;                                                                                             ;
+; Altera ; Signal Tap                      ; N/A     ; N/A          ; Licensed     ; |de10_lite|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_splitter:splitter   ;                                                                                             ;
+; N/A    ; altera_in_system_sources_probes ; 23.1    ; N/A          ; N/A          ; |de10_lite|unnamed:u0                                                                                                                                                                                                                                                          ; C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/unnamed.qsys ;
++--------+---------------------------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------+
+; State Machine - |de10_lite|multiplicador8x8:dut|mult_control:mult_control_inst|state           ;
++-----------------+-----------+-----------------+-----------+-----------+-----------+------------+
+; Name            ; state.ERR ; state.CALC_DONE ; state.MSB ; state.MID ; state.LSB ; state.IDLE ;
++-----------------+-----------+-----------------+-----------+-----------+-----------+------------+
+; state.IDLE      ; 0         ; 0               ; 0         ; 0         ; 0         ; 0          ;
+; state.LSB       ; 0         ; 0               ; 0         ; 0         ; 1         ; 1          ;
+; state.MID       ; 0         ; 0               ; 0         ; 1         ; 0         ; 1          ;
+; state.MSB       ; 0         ; 0               ; 1         ; 0         ; 0         ; 1          ;
+; state.CALC_DONE ; 0         ; 1               ; 0         ; 0         ; 0         ; 1          ;
+; state.ERR       ; 1         ; 0               ; 0         ; 0         ; 0         ; 1          ;
++-----------------+-----------+-----------------+-----------+-----------+-----------+------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 174   ;
+; Number of registers using Synchronous Clear  ; 12    ;
+; Number of registers using Synchronous Load   ; 27    ;
+; Number of registers using Asynchronous Clear ; 82    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 106   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                                                                                                                                                                                                              ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 2       ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
+; Total number of inverted registers = 2                                                                                                                                                                                                                                                                                          ;         ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |de10_lite|unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|sld_rom_sr:\no_instance_id_gen:rom_info_inst|word_counter[2] ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |de10_lite|unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|shift_reg[26]                                                ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |de10_lite|unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|shift_reg[15]                                                ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |de10_lite|unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|sld_rom_sr:\no_instance_id_gen:rom_info_inst|WORD_SR[1]      ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |de10_lite|multiplicador8x8:dut|shifter:shifter|shift_out[11]                                                                                                                                                                                                     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |de10_lite|multiplicador8x8:dut|shifter:shifter|shift_out[4]                                                                                                                                                                                                      ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |de10_lite|multiplicador8x8:dut|mult_control:mult_control_inst|Selector1                                                                                                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst ;
++---------------------------------+-------+------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                                                                                              ;
++---------------------------------+-------+------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NOT_GATE_PUSH_BACK              ; OFF   ; -    ; -                                                                                                                                                               ;
+; POWER_UP_LEVEL                  ; LOW   ; -    ; -                                                                                                                                                               ;
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                                                                                               ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[0]                                                                                                                                                     ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[31]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[30]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[29]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[28]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[27]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[26]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[25]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[24]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[23]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[22]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[21]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[20]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[19]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[18]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[17]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[16]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[15]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[14]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[13]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[12]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[11]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[10]                                                                                                                                                    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[9]                                                                                                                                                     ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[8]                                                                                                                                                     ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[7]                                                                                                                                                     ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[6]                                                                                                                                                     ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[5]                                                                                                                                                     ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[4]                                                                                                                                                     ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[3]                                                                                                                                                     ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[2]                                                                                                                                                     ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[1]                                                                                                                                                     ;
++---------------------------------+-------+------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: unnamed:u0|altsource_probe_top:in_system_sources_probes_0 ;
++-------------------------+-----------------+------------------------------------------------------------+
+; Parameter Name          ; Value           ; Type                                                       ;
++-------------------------+-----------------+------------------------------------------------------------+
+; lpm_type                ; altsource_probe ; String                                                     ;
+; lpm_hint                ; UNUSED          ; String                                                     ;
+; sld_auto_instance_index ; YES             ; String                                                     ;
+; sld_instance_index      ; 0               ; Signed Integer                                             ;
+; sld_node_info_parameter ; 4746752         ; Signed Integer                                             ;
+; sld_ir_width            ; 4               ; Signed Integer                                             ;
+; instance_id             ; NONE            ; String                                                     ;
+; probe_width             ; 32              ; Signed Integer                                             ;
+; source_width            ; 32              ; Signed Integer                                             ;
+; source_initial_value    ; 0               ; String                                                     ;
+; enable_metastability    ; NO              ; String                                                     ;
++-------------------------+-----------------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl ;
++-------------------------+-----------------+--------------------------------------------------------------------------------------+
+; Parameter Name          ; Value           ; Type                                                                                 ;
++-------------------------+-----------------+--------------------------------------------------------------------------------------+
+; lpm_type                ; altsource_probe ; String                                                                               ;
+; lpm_hint                ; UNUSED          ; String                                                                               ;
+; sld_auto_instance_index ; YES             ; String                                                                               ;
+; sld_instance_index      ; 0               ; Signed Integer                                                                       ;
+; SLD_NODE_INFO           ; 4746752         ; Signed Integer                                                                       ;
+; sld_ir_width            ; 4               ; Signed Integer                                                                       ;
+; instance_id             ; NONE            ; String                                                                               ;
+; probe_width             ; 32              ; Signed Integer                                                                       ;
+; source_width            ; 32              ; Signed Integer                                                                       ;
+; source_initial_value    ; 0               ; String                                                                               ;
+; enable_metastability    ; NO              ; String                                                                               ;
++-------------------------+-----------------+--------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplicador8x8:dut ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; data_width     ; 16    ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplicador8x8:dut|adder:adder ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; data_width     ; 16    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplicador8x8:dut|counter:counter ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; data_width_out ; 1     ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplicador8x8:dut|mult4x4:mult4x4 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; data_width     ; 4     ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplicador8x8:dut|mux4:mux4 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; data_width     ; 4     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplicador8x8:dut|mux_when:mux_when ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; data_width     ; 4     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplicador8x8:dut|reg16:reg16 ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; width          ; 16    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                 ;
++------------------------------------------------+----------+---------------------+
+; Parameter Name                                 ; Value    ; Type                ;
++------------------------------------------------+----------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 8        ; Untyped             ;
+; LPM_WIDTHB                                     ; 8        ; Untyped             ;
+; LPM_WIDTHP                                     ; 16       ; Untyped             ;
+; LPM_WIDTHR                                     ; 16       ; Untyped             ;
+; LPM_WIDTHS                                     ; 1        ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped             ;
+; LPM_PIPELINE                                   ; 0        ; Untyped             ;
+; LATENCY                                        ; 0        ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped             ;
+; USE_EAB                                        ; OFF      ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped             ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_0ls ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped             ;
++------------------------------------------------+----------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: multiplicador8x8:dut|mult4x4:mult4x4|lpm_mult:Mult0 ;
++------------------------------------------------+----------+------------------------------------------+
+; Parameter Name                                 ; Value    ; Type                                     ;
++------------------------------------------------+----------+------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                           ;
+; LPM_WIDTHA                                     ; 4        ; Untyped                                  ;
+; LPM_WIDTHB                                     ; 4        ; Untyped                                  ;
+; LPM_WIDTHP                                     ; 8        ; Untyped                                  ;
+; LPM_WIDTHR                                     ; 8        ; Untyped                                  ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                                  ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped                                  ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                                  ;
+; LATENCY                                        ; 0        ; Untyped                                  ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                                  ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                                  ;
+; USE_EAB                                        ; OFF      ; Untyped                                  ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped                                  ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                                  ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                                  ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K                      ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                                  ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                                  ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                                  ;
+; CBXI_PARAMETER                                 ; mult_9js ; Untyped                                  ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                                  ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                                  ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                                  ;
++------------------------------------------------+----------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                              ;
++---------------------------------------+-----------------------------------------------------+
+; Name                                  ; Value                                               ;
++---------------------------------------+-----------------------------------------------------+
+; Number of entity instances            ; 2                                                   ;
+; Entity Instance                       ; lpm_mult:Mult0                                      ;
+;     -- LPM_WIDTHA                     ; 8                                                   ;
+;     -- LPM_WIDTHB                     ; 8                                                   ;
+;     -- LPM_WIDTHP                     ; 16                                                  ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                            ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                  ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                  ;
+;     -- USE_EAB                        ; OFF                                                 ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                  ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                  ;
+; Entity Instance                       ; multiplicador8x8:dut|mult4x4:mult4x4|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 4                                                   ;
+;     -- LPM_WIDTHB                     ; 4                                                   ;
+;     -- LPM_WIDTHP                     ; 8                                                   ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                            ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                  ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                  ;
+;     -- USE_EAB                        ; OFF                                                 ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                  ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                  ;
++---------------------------------------+-----------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "seven_segment_cntrl:seven_segment_cntrl_hex4"                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; input      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; segs[5..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "seven_segment_cntrl:seven_segment_cntrl_hex3"                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; segs[7..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; segs[3..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "seven_segment_cntrl:seven_segment_cntrl_hex2"                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; input      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; segs[7..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; segs[1..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "seven_segment_cntrl:seven_segment_cntrl_hex1"                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; segs[7..2] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplicador8x8:dut|seven_segment_cntrl:seven_segment_cntrl" ;
++----------+-------+----------+------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                    ;
++----------+-------+----------+------------------------------------------------------------+
+; input[3] ; Input ; Info     ; Stuck at GND                                               ;
++----------+-------+----------+------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplicador8x8:dut"                                                               ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; segs ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl"                                                                    ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                                                                                      ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; raw_tck         ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; tdi             ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; usr1            ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_cdr  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_sdr  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_e1dr ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_udr  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_cir  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_uir  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_tlr  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; clr             ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; ena             ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; ir_in           ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; ir_out          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; tdo             ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "unnamed:u0|altsource_probe_top:in_system_sources_probes_0"                                                                                        ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                      ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; source_ena ; Input ; Info     ; Stuck at VCC                                                                                                                                 ;
+; source_clk ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "unnamed:u0"                                                                                                        ;
++--------+--------+------------------+----------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity         ; Details                                                                                                  ;
++--------+--------+------------------+----------------------------------------------------------------------------------------------------------+
+; source ; Output ; Critical Warning ; Can't connect array with 16 elements in array dimension 1 to port with 32 elements in the same dimension ;
+; probe  ; Input  ; Critical Warning ; Can't connect array with 16 elements in array dimension 1 to port with 32 elements in the same dimension ;
++--------+--------+------------------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 170                         ;
+; cycloneiii_ff         ; 96                          ;
+;     CLR               ; 9                           ;
+;     ENA               ; 7                           ;
+;     ENA CLR           ; 32                          ;
+;     ENA CLR SLD       ; 16                          ;
+;     plain             ; 32                          ;
+; cycloneiii_io_obuf    ; 35                          ;
+; cycloneiii_lcell_comb ; 180                         ;
+;     arith             ; 27                          ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 25                          ;
+;     normal            ; 153                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 12                          ;
+;         3 data inputs ; 61                          ;
+;         4 data inputs ; 76                          ;
+; cycloneiii_mac_mult   ; 1                           ;
+; cycloneiii_mac_out    ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 9.30                        ;
+; Average LUT depth     ; 3.75                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Processing started: Mon Apr 22 23:56:48 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off de10_lite -c de10_lite
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12248): Elaborating Platform Designer system entity "unnamed.qsys"
+Info (12250): 2024.04.22.23:56:57 Progress: Loading sintese/unnamed.qsys
+Info (12250): 2024.04.22.23:56:57 Progress: Reading input file
+Info (12250): 2024.04.22.23:56:57 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 23.1]
+Info (12250): 2024.04.22.23:56:57 Progress: Parameterizing module in_system_sources_probes_0
+Info (12250): 2024.04.22.23:56:57 Progress: Building connections
+Info (12250): 2024.04.22.23:56:57 Progress: Parameterizing connections
+Info (12250): 2024.04.22.23:56:57 Progress: Validating
+Info (12250): 2024.04.22.23:56:58 Progress: Done reading input file
+Info (12250): Unnamed: Generating unnamed "unnamed" for QUARTUS_SYNTH
+Info (12250): In_system_sources_probes_0: "unnamed" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
+Info (12250): Unnamed: Done "unnamed" with 2 modules, 2 files
+Info (12249): Finished elaborating Platform Designer system entity "unnamed.qsys"
+Info (12021): Found 2 design units, including 1 entities, in source file /users/elvis/onedrive/documentos/_pld/avaliacaodois/multiplicador8x8/shifter.vhd
+    Info (12022): Found design unit 1: shifter-behavioral File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/shifter.vhd Line: 29
+    Info (12023): Found entity 1: shifter File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/shifter.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file /users/elvis/onedrive/documentos/_pld/avaliacaodois/multiplicador8x8/seven_segment_cntrl.vhd
+    Info (12022): Found design unit 1: seven_segment_cntrl-Behavioral File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/seven_segment_cntrl.vhd Line: 19
+    Info (12023): Found entity 1: seven_segment_cntrl File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/seven_segment_cntrl.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file /users/elvis/onedrive/documentos/_pld/avaliacaodois/multiplicador8x8/reg16.vhd
+    Info (12022): Found design unit 1: reg16-rtl File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/reg16.vhd Line: 33
+    Info (12023): Found entity 1: reg16 File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/reg16.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file /users/elvis/onedrive/documentos/_pld/avaliacaodois/multiplicador8x8/mux_when.vhd
+    Info (12022): Found design unit 1: mux_when-RTL File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/mux_when.vhd Line: 24
+    Info (12023): Found entity 1: mux_when File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/mux_when.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file /users/elvis/onedrive/documentos/_pld/avaliacaodois/multiplicador8x8/mux_sel.vhd
+    Info (12022): Found design unit 1: mux4-RTL File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/mux_sel.vhd Line: 24
+    Info (12023): Found entity 1: mux4 File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/mux_sel.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file /users/elvis/onedrive/documentos/_pld/avaliacaodois/multiplicador8x8/multiplicador8x8.vhd
+    Info (12022): Found design unit 1: multiplicador8x8-RTL File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/multiplicador8x8.vhd Line: 28
+    Info (12023): Found entity 1: multiplicador8x8 File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/multiplicador8x8.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file /users/elvis/onedrive/documentos/_pld/avaliacaodois/multiplicador8x8/mult4x4.vhd
+    Info (12022): Found design unit 1: mult4x4-RTL File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/mult4x4.vhd Line: 23
+    Info (12023): Found entity 1: mult4x4 File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/mult4x4.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file /users/elvis/onedrive/documentos/_pld/avaliacaodois/multiplicador8x8/mult_control.vhd
+    Info (12022): Found design unit 1: mult_control-RTL File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/mult_control.vhd Line: 27
+    Info (12023): Found entity 1: mult_control File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/mult_control.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file /users/elvis/onedrive/documentos/_pld/avaliacaodois/multiplicador8x8/counter.vhd
+    Info (12022): Found design unit 1: counter-behavioral File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/counter.vhd Line: 31
+    Info (12023): Found entity 1: counter File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/counter.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file /users/elvis/onedrive/documentos/_pld/avaliacaodois/multiplicador8x8/adder.vhd
+    Info (12022): Found design unit 1: adder-RTL File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/adder.vhd Line: 26
+    Info (12023): Found entity 1: adder File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/adder.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file de10_lite.vhd
+    Info (12022): Found design unit 1: de10_lite-rtl File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 62
+    Info (12023): Found entity 1: de10_lite File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/unnamed/submodules/altsource_probe_top.v
+    Info (12023): Found entity 1: altsource_probe_top File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/unnamed/submodules/altsource_probe_top.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/unnamed/unnamed.v
+    Info (12023): Found entity 1: unnamed File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/unnamed/unnamed.v Line: 6
+Info (12127): Elaborating entity "de10_lite" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(20): used implicit default value for signal "DRAM_ADDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 20
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(21): used implicit default value for signal "DRAM_BA" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 21
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(22): used implicit default value for signal "DRAM_CAS_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 22
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(23): used implicit default value for signal "DRAM_CKE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 23
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(24): used implicit default value for signal "DRAM_CLK" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 24
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(25): used implicit default value for signal "DRAM_CS_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 25
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(27): used implicit default value for signal "DRAM_LDQM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 27
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(28): used implicit default value for signal "DRAM_RAS_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 28
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(29): used implicit default value for signal "DRAM_UDQM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 29
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(30): used implicit default value for signal "DRAM_WE_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 30
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(32): used implicit default value for signal "HEX0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 32
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(33): used implicit default value for signal "HEX1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 33
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(37): used implicit default value for signal "HEX5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 37
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(45): used implicit default value for signal "VGA_B" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 45
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(46): used implicit default value for signal "VGA_G" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 46
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(47): used implicit default value for signal "VGA_HS" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 47
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(48): used implicit default value for signal "VGA_R" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 48
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(49): used implicit default value for signal "VGA_VS" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 49
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(51): used implicit default value for signal "GSENSOR_CS_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 51
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(53): used implicit default value for signal "GSENSOR_SCLK" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 53
+Warning (10541): VHDL Signal Declaration warning at de10_lite.vhd(66): used implicit default value for signal "reset_a" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 66
+Warning (10036): Verilog HDL or VHDL warning at de10_lite.vhd(69): object "segs" assigned a value but never read File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 69
+Critical Warning (10920): VHDL Incomplete Partial Association warning at de10_lite.vhd(182): port or argument "segs" has 6/8 unassociated elements File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 182
+Critical Warning (10920): VHDL Incomplete Partial Association warning at de10_lite.vhd(188): port or argument "segs" has 6/8 unassociated elements File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 188
+Critical Warning (10920): VHDL Incomplete Partial Association warning at de10_lite.vhd(194): port or argument "segs" has 6/8 unassociated elements File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 194
+Critical Warning (10920): VHDL Incomplete Partial Association warning at de10_lite.vhd(200): port or argument "segs" has 6/8 unassociated elements File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 200
+Warning (10873): Using initial value X (don't care) for net "LEDR[9..1]" at de10_lite.vhd(41) File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 41
+Info (12128): Elaborating entity "unnamed" for hierarchy "unnamed:u0" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 96
+Info (12128): Elaborating entity "altsource_probe_top" for hierarchy "unnamed:u0|altsource_probe_top:in_system_sources_probes_0" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/unnamed/unnamed.v Line: 23
+Info (12128): Elaborating entity "altsource_probe" for hierarchy "unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/unnamed/submodules/altsource_probe_top.v Line: 55
+Info (12130): Elaborated megafunction instantiation "unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/unnamed/submodules/altsource_probe_top.v Line: 55
+Info (12133): Instantiated megafunction "unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" with the following parameter: File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/unnamed/submodules/altsource_probe_top.v Line: 55
+    Info (12134): Parameter "lpm_type" = "altsource_probe"
+    Info (12134): Parameter "lpm_hint" = "UNUSED"
+    Info (12134): Parameter "sld_auto_instance_index" = "YES"
+    Info (12134): Parameter "sld_instance_index" = "0"
+    Info (12134): Parameter "SLD_NODE_INFO" = "4746752"
+    Info (12134): Parameter "sld_ir_width" = "4"
+    Info (12134): Parameter "instance_id" = "NONE"
+    Info (12134): Parameter "probe_width" = "32"
+    Info (12134): Parameter "source_width" = "32"
+    Info (12134): Parameter "source_initial_value" = "0"
+    Info (12134): Parameter "enable_metastability" = "NO"
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|sld_jtag_endpoint_adapter:jtag_signal_adapter" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsource_probe.v Line: 169
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 232
+Info (12128): Elaborating entity "altsource_probe_body" for hierarchy "unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsource_probe.v Line: 205
+Info (12128): Elaborating entity "altsource_probe_impl" for hierarchy "unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 564
+Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "unnamed:u0|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|sld_rom_sr:\no_instance_id_gen:rom_info_inst" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 776
+Info (12128): Elaborating entity "multiplicador8x8" for hierarchy "multiplicador8x8:dut" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 115
+Info (12128): Elaborating entity "adder" for hierarchy "multiplicador8x8:dut|adder:adder" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/multiplicador8x8.vhd Line: 54
+Info (12128): Elaborating entity "shifter" for hierarchy "multiplicador8x8:dut|shifter:shifter" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/multiplicador8x8.vhd Line: 64
+Info (12128): Elaborating entity "counter" for hierarchy "multiplicador8x8:dut|counter:counter" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/multiplicador8x8.vhd Line: 72
+Info (12128): Elaborating entity "mult4x4" for hierarchy "multiplicador8x8:dut|mult4x4:mult4x4" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/multiplicador8x8.vhd Line: 81
+Info (12128): Elaborating entity "mux4" for hierarchy "multiplicador8x8:dut|mux4:mux4" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/multiplicador8x8.vhd Line: 91
+Info (12128): Elaborating entity "mux_when" for hierarchy "multiplicador8x8:dut|mux_when:mux_when" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/multiplicador8x8.vhd Line: 102
+Info (12128): Elaborating entity "reg16" for hierarchy "multiplicador8x8:dut|reg16:reg16" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/multiplicador8x8.vhd Line: 113
+Info (12128): Elaborating entity "seven_segment_cntrl" for hierarchy "multiplicador8x8:dut|seven_segment_cntrl:seven_segment_cntrl" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/multiplicador8x8.vhd Line: 125
+Info (12128): Elaborating entity "mult_control" for hierarchy "multiplicador8x8:dut|mult_control:mult_control_inst" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/multiplicador8x8.vhd Line: 140
+Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
+Info (11172): 2024.04.22.23:57:02 Progress: Loading slde7a58a48/alt_sld_fab_wrapper_hw.tcl
+Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
+Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
+Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
+Info (11172): Presplit: "alt_sld_fab" instantiated altera_super_splitter "presplit"
+Info (11172): Splitter: "alt_sld_fab" instantiated altera_sld_splitter "splitter"
+Info (11172): Sldfabric: "alt_sld_fab" instantiated altera_sld_jtag_hub "sldfabric"
+Info (11172): Ident: "alt_sld_fab" instantiated altera_connection_identification_hub "ident"
+Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 6 modules, 6 files
+Info (11171): Finished IP generation for the debug fabric: alt_sld_fab.
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slde7a58a48/alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/slde7a58a48/alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab_ident.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab_presplit.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd
+    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 102
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/ip/slde7a58a48/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 109
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "multiplicador8x8:dut|mult4x4:mult4x4|Mult0" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/mult4x4.vhd Line: 27
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 109
+Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 109
+    Info (12134): Parameter "LPM_WIDTHA" = "8"
+    Info (12134): Parameter "LPM_WIDTHB" = "8"
+    Info (12134): Parameter "LPM_WIDTHP" = "16"
+    Info (12134): Parameter "LPM_WIDTHR" = "16"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_0ls.tdf
+    Info (12023): Found entity 1: mult_0ls File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/mult_0ls.tdf Line: 29
+Info (12130): Elaborated megafunction instantiation "multiplicador8x8:dut|mult4x4:mult4x4|lpm_mult:Mult0" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/mult4x4.vhd Line: 27
+Info (12133): Instantiated megafunction "multiplicador8x8:dut|mult4x4:mult4x4|lpm_mult:Mult0" with the following parameter: File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/mult4x4.vhd Line: 27
+    Info (12134): Parameter "LPM_WIDTHA" = "4"
+    Info (12134): Parameter "LPM_WIDTHB" = "4"
+    Info (12134): Parameter "LPM_WIDTHP" = "8"
+    Info (12134): Parameter "LPM_WIDTHR" = "8"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_9js.tdf
+    Info (12023): Found entity 1: mult_9js File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/mult_9js.tdf Line: 29
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "multiplicador8x8:dut|mult4x4:mult4x4|lpm_mult:Mult0|mult_9js:auto_generated|le5a[4]" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/db/mult_9js.tdf Line: 43
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13014): Ignored 48 buffer(s)
+    Info (13016): Ignored 4 CARRY_SUM buffer(s)
+    Info (13019): Ignored 44 SOFT buffer(s)
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "DRAM_DQ[0]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 26
+    Warning (13040): bidirectional pin "DRAM_DQ[1]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 26
+    Warning (13040): bidirectional pin "DRAM_DQ[2]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 26
+    Warning (13040): bidirectional pin "DRAM_DQ[3]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 26
+    Warning (13040): bidirectional pin "DRAM_DQ[4]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 26
+    Warning (13040): bidirectional pin "DRAM_DQ[5]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 26
+    Warning (13040): bidirectional pin "DRAM_DQ[6]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 26
+    Warning (13040): bidirectional pin "DRAM_DQ[7]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 26
+    Warning (13040): bidirectional pin "DRAM_DQ[8]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 26
+    Warning (13040): bidirectional pin "DRAM_DQ[9]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 26
+    Warning (13040): bidirectional pin "DRAM_DQ[10]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 26
+    Warning (13040): bidirectional pin "DRAM_DQ[11]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 26
+    Warning (13040): bidirectional pin "DRAM_DQ[12]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 26
+    Warning (13040): bidirectional pin "DRAM_DQ[13]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 26
+    Warning (13040): bidirectional pin "DRAM_DQ[14]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 26
+    Warning (13040): bidirectional pin "DRAM_DQ[15]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 26
+    Warning (13040): bidirectional pin "GSENSOR_SDI" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 54
+    Warning (13040): bidirectional pin "GSENSOR_SDO" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 55
+    Warning (13040): bidirectional pin "ARDUINO_IO[0]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 57
+    Warning (13040): bidirectional pin "ARDUINO_IO[1]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 57
+    Warning (13040): bidirectional pin "ARDUINO_IO[2]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 57
+    Warning (13040): bidirectional pin "ARDUINO_IO[3]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 57
+    Warning (13040): bidirectional pin "ARDUINO_IO[4]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 57
+    Warning (13040): bidirectional pin "ARDUINO_IO[5]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 57
+    Warning (13040): bidirectional pin "ARDUINO_IO[6]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 57
+    Warning (13040): bidirectional pin "ARDUINO_IO[7]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 57
+    Warning (13040): bidirectional pin "ARDUINO_IO[8]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 57
+    Warning (13040): bidirectional pin "ARDUINO_IO[9]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 57
+    Warning (13040): bidirectional pin "ARDUINO_IO[10]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 57
+    Warning (13040): bidirectional pin "ARDUINO_IO[11]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 57
+    Warning (13040): bidirectional pin "ARDUINO_IO[12]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 57
+    Warning (13040): bidirectional pin "ARDUINO_IO[13]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 57
+    Warning (13040): bidirectional pin "ARDUINO_IO[14]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 57
+    Warning (13040): bidirectional pin "ARDUINO_IO[15]" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 57
+    Warning (13040): bidirectional pin "ARDUINO_RESET_N" has no driver File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 58
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 20
+    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 20
+    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 20
+    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 20
+    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 20
+    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 20
+    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 20
+    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 20
+    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 20
+    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 20
+    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 20
+    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 20
+    Warning (13410): Pin "DRAM_ADDR[12]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 20
+    Warning (13410): Pin "DRAM_BA[0]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 21
+    Warning (13410): Pin "DRAM_BA[1]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 21
+    Warning (13410): Pin "DRAM_CAS_N" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 22
+    Warning (13410): Pin "DRAM_CKE" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 23
+    Warning (13410): Pin "DRAM_CLK" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 24
+    Warning (13410): Pin "DRAM_CS_N" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 25
+    Warning (13410): Pin "DRAM_LDQM" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 27
+    Warning (13410): Pin "DRAM_RAS_N" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 28
+    Warning (13410): Pin "DRAM_UDQM" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 29
+    Warning (13410): Pin "DRAM_WE_N" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 30
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 32
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 32
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 32
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 32
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 32
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 32
+    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 32
+    Warning (13410): Pin "HEX0[7]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 32
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 33
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 33
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 33
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 33
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 33
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 33
+    Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 33
+    Warning (13410): Pin "HEX1[7]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 33
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 36
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 36
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 36
+    Warning (13410): Pin "HEX4[7]" is stuck at VCC File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 36
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 37
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 37
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 37
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 37
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 37
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 37
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 37
+    Warning (13410): Pin "HEX5[7]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 37
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 41
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 41
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 41
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 41
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 41
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 41
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 41
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 41
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 41
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 45
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 45
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 45
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 45
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 46
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 46
+    Warning (13410): Pin "VGA_G[2]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 46
+    Warning (13410): Pin "VGA_G[3]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 46
+    Warning (13410): Pin "VGA_HS" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 47
+    Warning (13410): Pin "VGA_R[0]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 48
+    Warning (13410): Pin "VGA_R[1]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 48
+    Warning (13410): Pin "VGA_R[2]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 48
+    Warning (13410): Pin "VGA_R[3]" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 48
+    Warning (13410): Pin "VGA_VS" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 49
+    Warning (13410): Pin "GSENSOR_CS_N" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 51
+    Warning (13410): Pin "GSENSOR_SCLK" is stuck at GND File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 53
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 14 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "ADC_CLK_10" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 16
+    Warning (15610): No output dependent on input pin "MAX10_CLK1_50" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 17
+    Warning (15610): No output dependent on input pin "MAX10_CLK2_50" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 18
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 39
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 39
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 43
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 43
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 43
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 43
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 43
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 43
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 43
+    Warning (15610): No output dependent on input pin "GSENSOR_INT[1]" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 52
+    Warning (15610): No output dependent on input pin "GSENSOR_INT[2]" File: C:/Users/Elvis/OneDrive/Documentos/_pld/avaliacaodois/multiplicador8x8/sintese/de10_lite.vhd Line: 52
+Info (21057): Implemented 475 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 20 input pins
+    Info (21059): Implemented 98 output pins
+    Info (21060): Implemented 35 bidirectional pins
+    Info (21061): Implemented 320 logic cells
+    Info (21062): Implemented 1 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 160 warnings
+    Info: Peak virtual memory: 4822 megabytes
+    Info: Processing ended: Mon Apr 22 23:57:08 2024
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:47
+
+

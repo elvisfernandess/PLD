@@ -1,0 +1,9 @@
+
+State Machine - |de10_lite|multiplicador8x8:dut|mult_control:mult_control_inst|state
+Name state.ERR state.CALC_DONE state.MSB state.MID state.LSB state.IDLE 
+state.IDLE 0 0 0 0 0 0 
+state.LSB 0 0 0 0 1 1 
+state.MID 0 0 0 1 0 1 
+state.MSB 0 0 1 0 0 1 
+state.CALC_DONE 0 1 0 0 0 1 
+state.ERR 1 0 0 0 0 1 
