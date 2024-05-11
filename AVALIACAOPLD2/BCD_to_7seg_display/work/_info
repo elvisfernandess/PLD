@@ -1,0 +1,133 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Elvis/OneDrive/Documentos/_pld/AVALIACAOPLD2/BCD_to_7seg_display
+Ebcd_to_7seg_display
+Z1 w1714956722
+Z2 DPx4 work 15 bcd_to_7seg_pkg 0 22 P36TbGiCkCXMgL7h6U_:j2
+Z3 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z6 8BCD_to_7seg_display.vhd
+Z7 FBCD_to_7seg_display.vhd
+l0
+L24
+ViA@z2>UaUWIMZQi9n2?Qb2
+!s100 I@DiAcGY@9M;4IN@HKETC3
+Z8 OV;C;10.5b;63
+32
+Z9 !s110 1714956726
+!i10b 1
+Z10 !s108 1714956726.000000
+Z11 !s90 -reportprogress|300|bcd_to_7seg_pkg.vhd|BCD_to_7seg_display.vhd|BCD_to_7seg_display_tb.vhd|
+Z12 !s107 BCD_to_7seg_display_tb.vhd|BCD_to_7seg_display.vhd|bcd_to_7seg_pkg.vhd|
+!i113 1
+Z13 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+R4
+R5
+Z14 DEx4 work 19 bcd_to_7seg_display 0 22 iA@z2>UaUWIMZQi9n2?Qb2
+l32
+L31
+Z15 VHV^]4]A8dbCKj=UT1R=002
+Z16 !s100 WKc>XOGc=P9m5R45J9NDN3
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Ebcd_to_7seg_display_tb
+Z17 w1714955898
+R2
+R3
+R4
+R5
+R0
+Z18 8BCD_to_7seg_display_tb.vhd
+Z19 FBCD_to_7seg_display_tb.vhd
+l0
+L25
+V9HgG_WUV]=1G;f[>[C:kO3
+!s100 hH2?;_WI27bMl7QZOGJ022
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Abehavioral
+R14
+R2
+R3
+R4
+R5
+Z20 DEx4 work 22 bcd_to_7seg_display_tb 0 22 9HgG_WUV]=1G;f[>[C:kO3
+l33
+L28
+Z21 V2ie9Bf1GTdkVANP^BS83C3
+Z22 !s100 DPToh:I;`WEnlIkFmKR=83
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Pbcd_to_7seg_pkg
+R3
+R4
+R5
+Z23 w1714956271
+R0
+Z24 8bcd_to_7seg_pkg.vhd
+Z25 Fbcd_to_7seg_pkg.vhd
+l0
+L23
+VP36TbGiCkCXMgL7h6U_:j2
+!s100 5c3F=2ARe0OnQjk8hQi3O3
+R8
+32
+b1
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Bbody
+R2
+R3
+R4
+R5
+l0
+L62
+Z26 V[YcnI`^YRk2KzEInen0la1
+Z27 !s100 6lCRKLhc_mfJ^4ncC@1Io2
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13

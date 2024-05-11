@@ -1,0 +1,128 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Elvis/OneDrive/Documentos/_pld/AVALIACAOPLD2/prescaler
+Eprescaler
+Z1 w1714885725
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8prescaler.vhd
+Z6 Fprescaler.vhd
+l0
+L19
+V6>5<Fc86k739>2YkFF`2e1
+!s100 [W^UBQKf2Ve9PU;9ABYk]2
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1714885772
+!i10b 1
+Z9 !s108 1714885772.000000
+Z10 !s90 -reportprogress|300|prescaler.vhd|tb_prescaler.vhd|
+Z11 !s107 tb_prescaler.vhd|prescaler.vhd|
+!i113 1
+Z12 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+Z13 DEx4 work 9 prescaler 0 22 6>5<Fc86k739>2YkFF`2e1
+l50
+L33
+V>3]T]ALzk:RWVVcA;Mk?A0
+!s100 3Z4ERQ^E54o4f2fZzHGlH1
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Etb_prescaler
+Z14 w1714885763
+R2
+R3
+R4
+R0
+Z15 8tb_prescaler.vhd
+Z16 Ftb_prescaler.vhd
+l0
+L19
+Vi[emJNCOafAY[fiLKf>bo0
+!s100 6d@`o24jL[3RE`Cf`ZLB]3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Astimulus
+R13
+R2
+R3
+R4
+DEx4 work 12 tb_prescaler 0 22 i[emJNCOafAY[fiLKf>bo0
+l34
+L22
+VY_<BD:>S;L:imob5K52[a2
+!s100 i7OWfQ9SUHnHCe@ZAd?kz0
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Etemporizador_com_prescaler
+Z17 w1714866059
+R2
+R3
+R4
+R0
+R5
+R6
+l0
+L5
+VRYPQ7bY6CQFM]LnW7Z9m=2
+!s100 =UnmAkjZhG^zfBZUZ28`@1
+R7
+32
+Z18 !s110 1714866313
+!i10b 1
+Z19 !s108 1714866313.000000
+R10
+R11
+!i113 1
+R12
+Artl
+R2
+R3
+R4
+DEx4 work 26 temporizador_com_prescaler 0 22 RYPQ7bY6CQFM]LnW7Z9m=2
+l33
+L20
+VU0g@X=8N<UK5Z:bgf_e@G2
+!s100 G:<94_H@6hZADS@AoWoa43
+R7
+32
+R18
+!i10b 1
+R19
+R10
+R11
+!i113 1
+R12
